@@ -1,4 +1,15 @@
-# Unity-ARKit-Plugin #
+# MathTalk AR Project #
+
+This is an IOS app built on Apple's ARKit SDK in Unity. Goal is to create an AR app for children that will allow them to learn about mathematical concepts such as shapes, angles, and simple arithmetic in relation to the world around them. Users will be able to build and create in a digital sandbox where they can interact with their own 3D objects to find out more.
+
+This README will be expanded upon as features grow.
+
+
+
+
+ARKit Unity Plugin Documentation continues below as follows:
+
+## ARKit Unity Plugin ##
 
 [**Latest Update:** This plugin now supports new ARKit functionality exposed in ARKit 1.5 update.  See this [blog post](https://blogs.unity3d.com/2018/02/16/developing-for-arkit-1-5-update-using-unity-arkit-plugin/) for details.]
 
