@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{15DCBE49-3637-7286-5114-35C20CDE431A}</ProjectGuid>
+    <ProjectGuid>{BB798820-E2D2-7061-4B7D-EFEE2547DB9F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -57,10 +57,10 @@
      <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\ARResourcesJSON.cs" />
      <Compile Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Editor\UnityARBuildPostprocessor.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>/Users/cdisini/Downloads/Unity-Technologies-unity-arkit-plugin-b4d4bbf5f4bf/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>/Users/cdisini/Documents/MathTalks_Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>/Users/cdisini/Downloads/Unity-Technologies-unity-arkit-plugin-b4d4bbf5f4bf/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>/Users/cdisini/Documents/MathTalks_Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -356,7 +356,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{032D1284-FA4B-5CD1-1867-4EAC334A9078}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{0663CC46-048F-D075-9F3B-8800EAE857E2}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
