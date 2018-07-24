@@ -146,10 +146,10 @@ RectTransform:
   m_Father: {fileID: 509609884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176, y: -143.5}
-  m_SizeDelta: {x: 80, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 59, y: 34}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63785392
 MonoBehaviour:
@@ -256,7 +256,7 @@ MonoBehaviour:
           m_MethodName: ClickEvent
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 1859822176127166, guid: 5de37038992124f248bd3dbd2b6f681e,
+            m_ObjectArgument: {fileID: 1483093577405612, guid: 9c8a1fc58df6b4d8c8c68e2883659c8a,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e09e05faee3741cc898f1cbc29f831a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRayDistance: 30
+  maxRayDistance: 1000
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024

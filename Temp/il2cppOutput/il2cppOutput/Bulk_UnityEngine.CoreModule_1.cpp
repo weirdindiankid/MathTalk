@@ -306,6 +306,7 @@ extern const uint32_t Vector2_op_Inequality_m3858779880_MetadataUsageId;
 extern const uint32_t Vector2_get_zero_m540426400_MetadataUsageId;
 extern const uint32_t Vector2_get_one_m738793577_MetadataUsageId;
 extern const uint32_t Vector2_get_up_m2647420593_MetadataUsageId;
+extern const uint32_t Vector2_get_right_m1027081661_MetadataUsageId;
 extern const uint32_t Vector2__cctor_m2108982652_MetadataUsageId;
 extern const uint32_t Vector3_Lerp_m407887542_MetadataUsageId;
 extern RuntimeClass* Vector3_t3722313464_il2cpp_TypeInfo_var;
@@ -5894,6 +5895,30 @@ extern "C"  Vector2_t2156229523  Vector2_get_up_m2647420593 (RuntimeObject * __t
 	{
 		IL2CPP_RUNTIME_CLASS_INIT(Vector2_t2156229523_il2cpp_TypeInfo_var);
 		Vector2_t2156229523  L_0 = ((Vector2_t2156229523_StaticFields*)il2cpp_codegen_static_fields_for(Vector2_t2156229523_il2cpp_TypeInfo_var))->get_upVector_4();
+		V_0 = L_0;
+		goto IL_000c;
+	}
+
+IL_000c:
+	{
+		Vector2_t2156229523  L_1 = V_0;
+		return L_1;
+	}
+}
+// UnityEngine.Vector2 UnityEngine.Vector2::get_right()
+extern "C"  Vector2_t2156229523  Vector2_get_right_m1027081661 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (Vector2_get_right_m1027081661_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Vector2_t2156229523  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	{
+		IL2CPP_RUNTIME_CLASS_INIT(Vector2_t2156229523_il2cpp_TypeInfo_var);
+		Vector2_t2156229523  L_0 = ((Vector2_t2156229523_StaticFields*)il2cpp_codegen_static_fields_for(Vector2_t2156229523_il2cpp_TypeInfo_var))->get_rightVector_7();
 		V_0 = L_0;
 		goto IL_000c;
 	}

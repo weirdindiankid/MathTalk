@@ -20,14 +20,18 @@
 #include "il2cpp-object-internals.h"
 
 
-// UnityEngine.RaycastHit[]
-struct RaycastHitU5BU5D_t1690781147;
 // UnityEngine.Collider
 struct Collider_t1773347010;
-// UnityEngine.Object
-struct Object_t631007953;
 // UnityEngine.Rigidbody
 struct Rigidbody_t3916780224;
+// UnityEngine.RaycastHit[]
+struct RaycastHitU5BU5D_t1690781147;
+// UnityEngine.Object
+struct Object_t631007953;
+// UnityEngine.Transform
+struct Transform_t3600365921;
+// UnityEngine.Component
+struct Component_t1923634451;
 // System.Char[]
 struct CharU5BU5D_t3528271667;
 // System.String
@@ -42,6 +46,8 @@ struct ContactPointU5BU5D_t872956888;
 extern RuntimeClass* Object_t631007953_il2cpp_TypeInfo_var;
 extern RuntimeClass* Collider_t1773347010_il2cpp_TypeInfo_var;
 extern const uint32_t RaycastHit_get_collider_m1464180279_MetadataUsageId;
+extern const uint32_t RaycastHit_get_rigidbody_m2320267866_MetadataUsageId;
+extern const uint32_t RaycastHit_get_transform_m942054759_MetadataUsageId;
 struct ContactPoint_t3758755253 ;
 
 struct ContactPointU5BU5D_t872956888;
@@ -239,35 +245,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // INT32_T2950945753_H
-#ifndef SINGLE_T1397266774_H
-#define SINGLE_T1397266774_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// System.Single
-struct  Single_t1397266774 
-{
-public:
-	// System.Single System.Single::m_value
-	float ___m_value_7;
-
-public:
-	inline static int32_t get_offset_of_m_value_7() { return static_cast<int32_t>(offsetof(Single_t1397266774, ___m_value_7)); }
-	inline float get_m_value_7() const { return ___m_value_7; }
-	inline float* get_address_of_m_value_7() { return &___m_value_7; }
-	inline void set_m_value_7(float value)
-	{
-		___m_value_7 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // SINGLE_T1397266774_H
 #ifndef VECTOR2_T2156229523_H
 #define VECTOR2_T2156229523_H
 #ifdef __clang__
@@ -450,6 +427,35 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // BOOLEAN_T97287965_H
+#ifndef SINGLE_T1397266774_H
+#define SINGLE_T1397266774_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// System.Single
+struct  Single_t1397266774 
+{
+public:
+	// System.Single System.Single::m_value
+	float ___m_value_7;
+
+public:
+	inline static int32_t get_offset_of_m_value_7() { return static_cast<int32_t>(offsetof(Single_t1397266774, ___m_value_7)); }
+	inline float get_m_value_7() const { return ___m_value_7; }
+	inline float* get_address_of_m_value_7() { return &___m_value_7; }
+	inline void set_m_value_7(float value)
+	{
+		___m_value_7 = value;
+	}
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // SINGLE_T1397266774_H
 #ifndef INTPTR_T_H
 #define INTPTR_T_H
 #ifdef __clang__
@@ -1164,6 +1170,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // RIGIDBODY_T3916780224_H
+#ifndef TRANSFORM_T3600365921_H
+#define TRANSFORM_T3600365921_H
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+
+// UnityEngine.Transform
+struct  Transform_t3600365921  : public Component_t1923634451
+{
+public:
+
+public:
+};
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#endif // TRANSFORM_T3600365921_H
 #ifndef COLLIDER_T1773347010_H
 #define COLLIDER_T1773347010_H
 #ifdef __clang__
@@ -1393,6 +1419,18 @@ extern "C"  float RaycastHit_get_distance_m3727327466 (RaycastHit_t1056001966 * 
 extern "C"  Object_t631007953 * Object_FindObjectFromInstanceID_m235838713 (RuntimeObject * __this /* static, unused */, int32_t p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.Collider UnityEngine.RaycastHit::get_collider()
 extern "C"  Collider_t1773347010 * RaycastHit_get_collider_m1464180279 (RaycastHit_t1056001966 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+extern "C"  bool Object_op_Inequality_m4071470834 (RuntimeObject * __this /* static, unused */, Object_t631007953 * p0, Object_t631007953 * p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.Rigidbody UnityEngine.Collider::get_attachedRigidbody()
+extern "C"  Rigidbody_t3916780224 * Collider_get_attachedRigidbody_m135494519 (Collider_t1773347010 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.Rigidbody UnityEngine.RaycastHit::get_rigidbody()
+extern "C"  Rigidbody_t3916780224 * RaycastHit_get_rigidbody_m2320267866 (RaycastHit_t1056001966 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.Transform UnityEngine.Component::get_transform()
+extern "C"  Transform_t3600365921 * Component_get_transform_m3162698980 (Component_t1923634451 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// UnityEngine.Transform UnityEngine.RaycastHit::get_transform()
+extern "C"  Transform_t3600365921 * RaycastHit_get_transform_m942054759 (RaycastHit_t1056001966 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Component::.ctor()
+extern "C"  void Component__ctor_m1928064382 (Component_t1923634451 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Rigidbody::INTERNAL_set_velocity(UnityEngine.Vector3&)
 extern "C"  void Rigidbody_INTERNAL_set_velocity_m931742966 (Rigidbody_t3916780224 * __this, Vector3_t3722313464 * ___value0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
@@ -1432,6 +1470,16 @@ extern "C"  void Rigidbody_INTERNAL_set_velocity_m931742966 (Rigidbody_t39167802
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// UnityEngine.Rigidbody UnityEngine.Collider::get_attachedRigidbody()
+extern "C"  Rigidbody_t3916780224 * Collider_get_attachedRigidbody_m135494519 (Collider_t1773347010 * __this, const RuntimeMethod* method)
+{
+	typedef Rigidbody_t3916780224 * (*Collider_get_attachedRigidbody_m135494519_ftn) (Collider_t1773347010 *);
+	static Collider_get_attachedRigidbody_m135494519_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Collider_get_attachedRigidbody_m135494519_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Collider::get_attachedRigidbody()");
+	Rigidbody_t3916780224 * retVal = _il2cpp_icall_func(__this);
+	return retVal;
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -2278,6 +2326,121 @@ extern "C"  Collider_t1773347010 * RaycastHit_get_collider_m1464180279_AdjustorT
 	RaycastHit_t1056001966 * _thisAdjusted = reinterpret_cast<RaycastHit_t1056001966 *>(__this + 1);
 	return RaycastHit_get_collider_m1464180279(_thisAdjusted, method);
 }
+// UnityEngine.Rigidbody UnityEngine.RaycastHit::get_rigidbody()
+extern "C"  Rigidbody_t3916780224 * RaycastHit_get_rigidbody_m2320267866 (RaycastHit_t1056001966 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (RaycastHit_get_rigidbody_m2320267866_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Rigidbody_t3916780224 * V_0 = NULL;
+	Rigidbody_t3916780224 * G_B3_0 = NULL;
+	{
+		Collider_t1773347010 * L_0 = RaycastHit_get_collider_m1464180279((RaycastHit_t1056001966 *)__this, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t631007953_il2cpp_TypeInfo_var);
+		bool L_1 = Object_op_Inequality_m4071470834(NULL /*static, unused*/, L_0, (Object_t631007953 *)NULL, /*hidden argument*/NULL);
+		if (!L_1)
+		{
+			goto IL_0022;
+		}
+	}
+	{
+		Collider_t1773347010 * L_2 = RaycastHit_get_collider_m1464180279((RaycastHit_t1056001966 *)__this, /*hidden argument*/NULL);
+		NullCheck(L_2);
+		Rigidbody_t3916780224 * L_3 = Collider_get_attachedRigidbody_m135494519(L_2, /*hidden argument*/NULL);
+		G_B3_0 = L_3;
+		goto IL_0023;
+	}
+
+IL_0022:
+	{
+		G_B3_0 = ((Rigidbody_t3916780224 *)(NULL));
+	}
+
+IL_0023:
+	{
+		V_0 = G_B3_0;
+		goto IL_0029;
+	}
+
+IL_0029:
+	{
+		Rigidbody_t3916780224 * L_4 = V_0;
+		return L_4;
+	}
+}
+extern "C"  Rigidbody_t3916780224 * RaycastHit_get_rigidbody_m2320267866_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+{
+	RaycastHit_t1056001966 * _thisAdjusted = reinterpret_cast<RaycastHit_t1056001966 *>(__this + 1);
+	return RaycastHit_get_rigidbody_m2320267866(_thisAdjusted, method);
+}
+// UnityEngine.Transform UnityEngine.RaycastHit::get_transform()
+extern "C"  Transform_t3600365921 * RaycastHit_get_transform_m942054759 (RaycastHit_t1056001966 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (RaycastHit_get_transform_m942054759_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	Rigidbody_t3916780224 * V_0 = NULL;
+	Transform_t3600365921 * V_1 = NULL;
+	{
+		Rigidbody_t3916780224 * L_0 = RaycastHit_get_rigidbody_m2320267866((RaycastHit_t1056001966 *)__this, /*hidden argument*/NULL);
+		V_0 = L_0;
+		Rigidbody_t3916780224 * L_1 = V_0;
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t631007953_il2cpp_TypeInfo_var);
+		bool L_2 = Object_op_Inequality_m4071470834(NULL /*static, unused*/, L_1, (Object_t631007953 *)NULL, /*hidden argument*/NULL);
+		if (!L_2)
+		{
+			goto IL_0020;
+		}
+	}
+	{
+		Rigidbody_t3916780224 * L_3 = V_0;
+		NullCheck(L_3);
+		Transform_t3600365921 * L_4 = Component_get_transform_m3162698980(L_3, /*hidden argument*/NULL);
+		V_1 = L_4;
+		goto IL_0049;
+	}
+
+IL_0020:
+	{
+		Collider_t1773347010 * L_5 = RaycastHit_get_collider_m1464180279((RaycastHit_t1056001966 *)__this, /*hidden argument*/NULL);
+		IL2CPP_RUNTIME_CLASS_INIT(Object_t631007953_il2cpp_TypeInfo_var);
+		bool L_6 = Object_op_Inequality_m4071470834(NULL /*static, unused*/, L_5, (Object_t631007953 *)NULL, /*hidden argument*/NULL);
+		if (!L_6)
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		Collider_t1773347010 * L_7 = RaycastHit_get_collider_m1464180279((RaycastHit_t1056001966 *)__this, /*hidden argument*/NULL);
+		NullCheck(L_7);
+		Transform_t3600365921 * L_8 = Component_get_transform_m3162698980(L_7, /*hidden argument*/NULL);
+		V_1 = L_8;
+		goto IL_0049;
+	}
+
+IL_0042:
+	{
+		V_1 = (Transform_t3600365921 *)NULL;
+		goto IL_0049;
+	}
+
+IL_0049:
+	{
+		Transform_t3600365921 * L_9 = V_1;
+		return L_9;
+	}
+}
+extern "C"  Transform_t3600365921 * RaycastHit_get_transform_m942054759_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
+{
+	RaycastHit_t1056001966 * _thisAdjusted = reinterpret_cast<RaycastHit_t1056001966 *>(__this + 1);
+	return RaycastHit_get_transform_m942054759(_thisAdjusted, method);
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
@@ -2286,6 +2449,14 @@ extern "C"  Collider_t1773347010 * RaycastHit_get_collider_m1464180279_AdjustorT
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void UnityEngine.Rigidbody::.ctor()
+extern "C"  void Rigidbody__ctor_m1806995817 (Rigidbody_t3916780224 * __this, const RuntimeMethod* method)
+{
+	{
+		Component__ctor_m1928064382(__this, /*hidden argument*/NULL);
+		return;
+	}
+}
 // System.Void UnityEngine.Rigidbody::set_velocity(UnityEngine.Vector3)
 extern "C"  void Rigidbody_set_velocity_m2899403247 (Rigidbody_t3916780224 * __this, Vector3_t3722313464  ___value0, const RuntimeMethod* method)
 {

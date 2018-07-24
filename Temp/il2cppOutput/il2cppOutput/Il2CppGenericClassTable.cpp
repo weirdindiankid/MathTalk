@@ -2586,6 +2586,7 @@ extern Il2CppGenericClass U3CStartU3Ec__Iterator0_t3247905664_GenericClass;
 extern Il2CppGenericClass TweenRunner_1_t2443037680_GenericClass;
 extern Il2CppGenericClass EqualityComparer_1_t1286072262_GenericClass;
 extern Il2CppGenericClass IEnumerator_1_t3200223708_GenericClass;
+extern Il2CppGenericClass Predicate_1_t3592947364_GenericClass;
 extern Il2CppGenericClass Comparison_1_t2542584419_GenericClass;
 extern Il2CppGenericClass List_1_t4239727982_GenericClass;
 extern Il2CppGenericClass Dictionary_2_t691248465_GenericClass;
@@ -2611,7 +2612,7 @@ extern Il2CppGenericClass IEqualityComparer_1_t730487731_GenericClass;
 
 
 
-extern Il2CppGenericClass* const s_Il2CppGenericTypes[2585] = 
+extern Il2CppGenericClass* const s_Il2CppGenericTypes[2586] = 
 {
 	&IEnumerator_1_t3512676632_GenericClass,
 	&InternalEnumerator_1_t3987170281_GenericClass,
@@ -5178,6 +5179,7 @@ extern Il2CppGenericClass* const s_Il2CppGenericTypes[2585] =
 	&TweenRunner_1_t2443037680_GenericClass,
 	&EqualityComparer_1_t1286072262_GenericClass,
 	&IEnumerator_1_t3200223708_GenericClass,
+	&Predicate_1_t3592947364_GenericClass,
 	&Comparison_1_t2542584419_GenericClass,
 	&List_1_t4239727982_GenericClass,
 	&Dictionary_2_t691248465_GenericClass,

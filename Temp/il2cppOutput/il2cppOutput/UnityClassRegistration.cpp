@@ -342,36 +342,36 @@ RegisterBuiltinTypes();
 	RegisterClass<MonoBehaviour>("Core");
 	//28. Rigidbody
 	RegisterClass<Rigidbody>("Physics");
-	//29. ParticleSystem
-	RegisterClass<ParticleSystem>("ParticleSystem");
-	//30. Animator
-	RegisterClass<Animator>("Animation");
-	//31. AnimatorOverrideController
-	RegisterClass<AnimatorOverrideController>("Animation");
-	//32. RuntimeAnimatorController
-	RegisterClass<RuntimeAnimatorController>("Animation");
-	//33. UI::Canvas
-	RegisterClass<UI::Canvas>("UI");
-	//34. UI::CanvasGroup
-	RegisterClass<UI::CanvasGroup>("UI");
-	//35. UI::CanvasRenderer
-	RegisterClass<UI::CanvasRenderer>("UI");
-	//36. TextRendering::Font
-	RegisterClass<TextRendering::Font>("TextRendering");
-	//37. AudioClip
-	RegisterClass<AudioClip>("Audio");
-	//38. SampleClip
-	RegisterClass<SampleClip>("Audio");
-	//39. AudioListener
-	RegisterClass<AudioListener>("Audio");
-	//40. AudioBehaviour
-	RegisterClass<AudioBehaviour>("Audio");
-	//41. AudioSource
-	RegisterClass<AudioSource>("Audio");
-	//42. MeshCollider
-	RegisterClass<MeshCollider>("Physics");
-	//43. Collider
+	//29. Collider
 	RegisterClass<Collider>("Physics");
+	//30. ParticleSystem
+	RegisterClass<ParticleSystem>("ParticleSystem");
+	//31. Animator
+	RegisterClass<Animator>("Animation");
+	//32. AnimatorOverrideController
+	RegisterClass<AnimatorOverrideController>("Animation");
+	//33. RuntimeAnimatorController
+	RegisterClass<RuntimeAnimatorController>("Animation");
+	//34. UI::Canvas
+	RegisterClass<UI::Canvas>("UI");
+	//35. UI::CanvasGroup
+	RegisterClass<UI::CanvasGroup>("UI");
+	//36. UI::CanvasRenderer
+	RegisterClass<UI::CanvasRenderer>("UI");
+	//37. TextRendering::Font
+	RegisterClass<TextRendering::Font>("TextRendering");
+	//38. AudioClip
+	RegisterClass<AudioClip>("Audio");
+	//39. SampleClip
+	RegisterClass<SampleClip>("Audio");
+	//40. AudioListener
+	RegisterClass<AudioListener>("Audio");
+	//41. AudioBehaviour
+	RegisterClass<AudioBehaviour>("Audio");
+	//42. AudioSource
+	RegisterClass<AudioSource>("Audio");
+	//43. MeshCollider
+	RegisterClass<MeshCollider>("Physics");
 	//44. MeshRenderer
 	RegisterClass<MeshRenderer>("Core");
 	//45. PreloadData

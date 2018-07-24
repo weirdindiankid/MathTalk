@@ -329,3 +329,4 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnityARCameraNearFar
 ef7c0621b3836c214df93a78c7911dbb Assembly-CSharp.dll:.SpawnBalls
+75cd4817f677b2372fa50c36cd16bc31 Assembly-CSharp.dll:.CreateObj
