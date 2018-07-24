@@ -145,10 +145,10 @@ class WindZone;
 namespace UI { class CanvasRenderer; } template <> void RegisterClass<UI::CanvasRenderer>(const char*);
 class Collider; template <> void RegisterClass<Collider>(const char*);
 class BoxCollider; template <> void RegisterClass<BoxCollider>(const char*);
-class CapsuleCollider; 
+class CapsuleCollider; template <> void RegisterClass<CapsuleCollider>(const char*);
 class CharacterController; 
 class MeshCollider; template <> void RegisterClass<MeshCollider>(const char*);
-class SphereCollider; 
+class SphereCollider; template <> void RegisterClass<SphereCollider>(const char*);
 class TerrainCollider; 
 class WheelCollider; 
 namespace Unity { class Joint; } 
@@ -283,7 +283,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 75 non stripped classes
+	//Total: 77 non stripped classes
 	//0. Behaviour
 	RegisterClass<Behaviour>("Core");
 	//1. Unity::Component
@@ -432,7 +432,11 @@ RegisterBuiltinTypes();
 	RegisterClass<BoxCollider>("Physics");
 	//73. FlareLayer
 	RegisterClass<FlareLayer>("Core");
-	//74. PhysicMaterial
+	//74. CapsuleCollider
+	RegisterClass<CapsuleCollider>("Physics");
+	//75. PhysicMaterial
 	RegisterClass<PhysicMaterial>("Physics");
+	//76. SphereCollider
+	RegisterClass<SphereCollider>("Physics");
 
 }
