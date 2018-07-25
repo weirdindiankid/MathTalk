@@ -1,8 +1,8 @@
 iOS
 PlayerPath?
-/Users/cdisini/Downloads/Unity-Technologies-unity-arkit-plugin-b4d4bbf5f4bf/PlaneTest
+/Users/cdisini/Documents/XCode Projects/HelloPls
 SceneListBegin?
-Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
+Assets/Personal Testing Folder/Scenes/ScratchARTest.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARKitControl
 12096ddf91bc99172a48b0419861fd00 Assembly-CSharp.dll:.PointCloudParticleExample
@@ -210,6 +210,7 @@ dd6501652c91cb163a39e051d37a965f Assembly-CSharp.dll:.Ballz
 e31ef279e8d06182f0817ebd899ff54c Assembly-CSharp.dll:.UnityARUserAnchorExample
 5511a49b5104d2e14b66af50a17125f0 Assembly-CSharp.dll:.ParticlePainter
 e353101906474689643fc3c6d0a3ba4a Assembly-CSharp.dll:.ColorPicker
+89eb49e19df786cdc166b887e956f7f2 Assembly-CSharp.dll:.SpawnObject
 3241ebe8b0922d467d765be7f37fd1ca Assembly-CSharp.dll:.UnityARKitPluginSettings
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -327,3 +328,5 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnityARCameraNearFar
+ef7c0621b3836c214df93a78c7911dbb Assembly-CSharp.dll:.SpawnBalls
+75cd4817f677b2372fa50c36cd16bc31 Assembly-CSharp.dll:.CreateObj

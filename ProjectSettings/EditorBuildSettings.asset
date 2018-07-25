@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
     guid: c159f2591a9b5c843b0a0442451f78f8
   - enabled: 0
@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit1.5/UnityARVideoFormats/UnityARVideoFormats.unity
     guid: a88a66a31e1c640bb8f6592ac0e4ee7f
+  - enabled: 1
+    path: Assets/Personal Testing Folder/Scenes/ScratchARTest.unity
+    guid: 89760cb91508d4d958325eef04e2154e
   m_configObjects: {}
