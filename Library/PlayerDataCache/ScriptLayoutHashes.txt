@@ -2,7 +2,7 @@ iOS
 PlayerPath?
 /Users/cdisini/Documents/XCode Projects/HelloPls
 SceneListBegin?
-Assets/Personal Testing Folder/Scenes/ScratchARTest.unity
+Assets/Assets/Scenes/ScratchARTest.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARKitControl
 12096ddf91bc99172a48b0419861fd00 Assembly-CSharp.dll:.PointCloudParticleExample
@@ -331,3 +331,4 @@ a924c90a95cf65003f662aa5e30abb6b Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 ef7c0621b3836c214df93a78c7911dbb Assembly-CSharp.dll:.SpawnBalls
 75cd4817f677b2372fa50c36cd16bc31 Assembly-CSharp.dll:.CreateObj
 98b9fc1ce0c18238ce5a8ccda3100a18 Assembly-CSharp.dll:.OnClickHighlight
+e1bcc11881aae56ed1f1682742b49f05 Assembly-CSharp.dll:.SpawnRadioButtons
