@@ -89,6 +89,7 @@ public class SpawnRadioButtons : MonoBehaviour
                 {
                     GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
 					obj.GetComponent<Material>().color = ObjColors[Random.Range(0,ObjColors.Length)];
+					// Unfortunately, this block of code does not yet change the color. Will change once I figure which part is deprecated.
 
                     //we're going to get the position from the contact point
                     obj.transform.position = hit.point;
