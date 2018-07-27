@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Personal Testing Folder\Scripts\CreateObj.cs" />
+     <Compile Include="Assets\Personal Testing Folder\Scripts\OnClickHighlight.cs" />
      <Compile Include="Assets\Personal Testing Folder\Scripts\SpawnBalls.cs" />
      <Compile Include="Assets\Personal Testing Folder\Scripts\SpawnObject.cs" />
      <Compile Include="Assets\UnityARKitPlugin\ARKitRemote\ARKitFaceTrackingRemoteConnection.cs" />
@@ -143,6 +144,7 @@
      <Compile Include="Assets\UnityARKitPlugin\UnityARKitPluginSettings.cs" />
      <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileOcclusion.shader" />
      <None Include="Assets\UnityARKitPlugin\ARKitRemote\ARKITREMOTE.txt" />
+     <None Include="Assets\Outlined Diffuse.shader" />
      <None Include="Assets\UnityARKitPlugin\Plugins\iOS\UnityARKit\Shaders\YUVShaderLinear.shader" />
      <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\MobileARShadow.shader" />
      <None Include="Assets\UnityARKitPlugin\Examples\Common\Shaders\InstancedSurfaceShader.shader" />

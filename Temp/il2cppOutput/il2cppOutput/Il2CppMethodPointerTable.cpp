@@ -8219,6 +8219,7 @@ extern "C" void Input_INTERNAL_get_mousePosition_m1805263023 ();
 extern "C" void Input_get_mouseScrollDelta_m1758395486 ();
 extern "C" void Input_INTERNAL_get_mouseScrollDelta_m2841988821 ();
 extern "C" void Input_get_mousePresent_m2501415498 ();
+extern "C" void Input_get_touches_m1702694043 ();
 extern "C" void Input_GetTouch_m2192712756 ();
 extern "C" void Input_INTERNAL_CALL_GetTouch_m3481893561 ();
 extern "C" void Input_get_touchCount_m3403849067 ();
@@ -8270,6 +8271,7 @@ extern "C" void ManagedStreamHelpers_ManagedStreamSeek_m3158782053 ();
 extern "C" void ManagedStreamHelpers_ManagedStreamLength_m2930872960 ();
 extern "C" void Material__ctor_m249231841 ();
 extern "C" void Material_CreateWithMaterial_m2373088899 ();
+extern "C" void Material_set_shader_m1402562841 ();
 extern "C" void Material_set_color_m1794818007 ();
 extern "C" void Material_get_mainTexture_m692510677 ();
 extern "C" void Material_HasProperty_m1904868334 ();
@@ -8726,7 +8728,9 @@ extern "C" void FormerlySerializedAsAttribute__ctor_m520861771 ();
 extern "C" void SerializeField__ctor_m808862924 ();
 extern "C" void SetupCoroutine_InvokeMoveNext_m3199342729 ();
 extern "C" void SetupCoroutine_InvokeMember_m2661944898 ();
+extern "C" void Shader__ctor_m837260462 ();
 extern "C" void Shader_PropertyToID_m1030499873 ();
+extern "C" void Shader_Find_m2092206247 ();
 extern "C" void SkinnedMeshRenderer_get_sharedMesh_m1611698282 ();
 extern "C" void SkinnedMeshRenderer_SetBlendShapeWeight_m3755486032 ();
 extern "C" void SortingLayer_GetLayerValueFromID_m1947934714 ();
@@ -11297,6 +11301,9 @@ extern "C" void ModeSwitcher_Start_m3934514799 ();
 extern "C" void ModeSwitcher_Update_m874303597 ();
 extern "C" void ModeSwitcher_EnableBallCreation_m2937399940 ();
 extern "C" void ModeSwitcher_OnGUI_m1227622856 ();
+extern "C" void OnClickHighlight__ctor_m3144131184 ();
+extern "C" void OnClickHighlight_Start_m2015760846 ();
+extern "C" void OnClickHighlight_Update_m2890962192 ();
 extern "C" void ParticlePainter__ctor_m2009407357 ();
 extern "C" void ParticlePainter_Start_m2601608861 ();
 extern "C" void ParticlePainter_ARFrameUpdated_m1780071313 ();
@@ -11873,7 +11880,7 @@ extern "C" void VideoFormatsExample_Start_m1615238214 ();
 extern "C" void VideoFormatsExample_OnDestroy_m541603283 ();
 extern "C" void VideoFormatsExample_PopulateVideoFormatButtons_m595526008 ();
 extern "C" void VideoFormatsExample_ExampletButtonPressed_m2588664126 ();
-extern const Il2CppMethodPointer g_MethodPointers[11854] = 
+extern const Il2CppMethodPointer g_MethodPointers[11861] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -20075,6 +20082,7 @@ extern const Il2CppMethodPointer g_MethodPointers[11854] =
 	Input_get_mouseScrollDelta_m1758395486,
 	Input_INTERNAL_get_mouseScrollDelta_m2841988821,
 	Input_get_mousePresent_m2501415498,
+	Input_get_touches_m1702694043,
 	Input_GetTouch_m2192712756,
 	Input_INTERNAL_CALL_GetTouch_m3481893561,
 	Input_get_touchCount_m3403849067,
@@ -20126,6 +20134,7 @@ extern const Il2CppMethodPointer g_MethodPointers[11854] =
 	ManagedStreamHelpers_ManagedStreamLength_m2930872960,
 	Material__ctor_m249231841,
 	Material_CreateWithMaterial_m2373088899,
+	Material_set_shader_m1402562841,
 	Material_set_color_m1794818007,
 	Material_get_mainTexture_m692510677,
 	Material_HasProperty_m1904868334,
@@ -20582,7 +20591,9 @@ extern const Il2CppMethodPointer g_MethodPointers[11854] =
 	SerializeField__ctor_m808862924,
 	SetupCoroutine_InvokeMoveNext_m3199342729,
 	SetupCoroutine_InvokeMember_m2661944898,
+	Shader__ctor_m837260462,
 	Shader_PropertyToID_m1030499873,
+	Shader_Find_m2092206247,
 	SkinnedMeshRenderer_get_sharedMesh_m1611698282,
 	SkinnedMeshRenderer_SetBlendShapeWeight_m3755486032,
 	SortingLayer_GetLayerValueFromID_m1947934714,
@@ -23153,6 +23164,9 @@ extern const Il2CppMethodPointer g_MethodPointers[11854] =
 	ModeSwitcher_Update_m874303597,
 	ModeSwitcher_EnableBallCreation_m2937399940,
 	ModeSwitcher_OnGUI_m1227622856,
+	OnClickHighlight__ctor_m3144131184,
+	OnClickHighlight_Start_m2015760846,
+	OnClickHighlight_Update_m2890962192,
 	ParticlePainter__ctor_m2009407357,
 	ParticlePainter_Start_m2601608861,
 	ParticlePainter_ARFrameUpdated_m1780071313,
