@@ -19,7 +19,7 @@ public class SpawnRadioButtons : MonoBehaviour
     public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
 	private Color[] ObjColors = new Color[3];
-    private List<GameObject> CreatedObjs;
+    private List<GameObject> CreatedObjs = new List<GameObject>();
 
 	void Start () 
 	{
@@ -76,10 +76,9 @@ public class SpawnRadioButtons : MonoBehaviour
     {
         if (CreatedObjs.Count > 0) 
         {
-            foreach(GameObject obj in CreatedObjs) 
+            foreach(GameObject del in CreatedObjs) 
             {
-                CreatedObjs.Remove(obj);
-                Destroy(obj);
+                Destroy(del);
             }
         }
     }
