@@ -19,6 +19,7 @@ public class SpawnRadioButtons : MonoBehaviour
     public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
 	private Color[] ObjColors = new Color[3];
+    private List<GameObject> CreatedObjs;
 
 	void Start () 
 	{
@@ -70,6 +71,18 @@ public class SpawnRadioButtons : MonoBehaviour
             SpawnObj = null;
         }
     }
+
+    public void Delete() // Function is called by a button.
+    {
+        if (CreatedObjs.Count > 0) 
+        {
+            foreach(GameObject obj in CreatedObjs) 
+            {
+                CreatedObjs.Remove(obj);
+                Destroy(obj);
+            }
+        }
+    }
     void Update()
     {
         if (Input.touchCount > 0)
@@ -88,6 +101,7 @@ public class SpawnRadioButtons : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
                 {
                     GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
+                    CreatedObjs.Add(obj); // Adds object to list for easy deletion
 					Renderer rend = obj.GetComponent<Renderer>();
                     rend.material.shader = Shader.Find("_Color");
                     rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
