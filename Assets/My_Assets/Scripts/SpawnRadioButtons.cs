@@ -118,9 +118,11 @@ public class SpawnRadioButtons : MonoBehaviour
                 {
                     GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
                     CreatedObjs.Add(obj); // Adds object to list for easy deletion
-					Renderer rend = obj.GetComponent<Renderer>();
-                    rend.material.shader = Shader.Find("_Color");
-                    rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+					
+                    // Uncomment these lines for random color changing.
+                    //Renderer rend = obj.GetComponent<Renderer>();
+                    //rend.material.shader = Shader.Find("_Color");
+                    //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
 
                     //we're going to get the position from the contact point
                     obj.transform.position = hit.point;
