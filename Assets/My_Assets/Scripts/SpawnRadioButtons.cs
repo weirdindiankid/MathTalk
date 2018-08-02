@@ -7,13 +7,13 @@ public class SpawnRadioButtons : MonoBehaviour
 {
 
 
-    public int RadioInt = 0;
+    //public int RadioInt = 3;
 
     private GameObject SpawnObj;
     public GameObject CubeObj;
     public GameObject SphereObj;
-    public GameObject ConeObj;
-    public string[] RadioStrings = new string[] { "Cubes", "Spheres", "Cones" };
+    public GameObject CanObj;
+    //public string[] RadioStrings = new string[] { "Cubes", "Spheres", "Cones" };
 
     public float maxRayDistance = 1000.0f;
     public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
@@ -49,10 +49,11 @@ public class SpawnRadioButtons : MonoBehaviour
     }
 
 
-
+/*  Obselete
     void OnGUI()
     {
-        RadioInt = GUI.SelectionGrid(new Rect(25, 25, 1000, 300), RadioInt, RadioStrings, 1);
+        //RadioInt = GUI.SelectionGrid(new Rect(25, 25, 1000, 300), RadioInt, RadioStrings, 1);
+        // Creates a set of static radio buttons.
 
         if (RadioInt == 0)
         {
@@ -64,12 +65,28 @@ public class SpawnRadioButtons : MonoBehaviour
         }
         if (RadioInt == 2)
         {
-            SpawnObj = ConeObj;
+            SpawnObj = CanObj;
         }
-        if (RadioInt == 3)
+        if (RadioInt == 3) // Just in case
         {
             SpawnObj = null;
         }
+    }
+*/
+
+    public void Cube() 
+    {
+        SpawnObj = CubeObj;
+    }
+
+    public void Sphere()
+    {
+        SpawnObj = SphereObj;
+    }
+
+    public void Can()
+    {
+        SpawnObj = CanObj;
     }
 
     public void Delete() // Function is called by a button.

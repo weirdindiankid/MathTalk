@@ -49,7 +49,7 @@ public class SpawnObject : MonoBehaviour
 				//effectively similar to calling HitTest with ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent
 				if (Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)) {
 					//we're going to get the position from the contact point
-					Transform obj = Instantiate(SpawnedObject,hit.point,hit.transform.rotation);
+					Instantiate(SpawnedObject,hit.point,hit.transform.rotation);
 					//SpawnedObject.position = hit.point;
 					Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", SpawnedObject.position.x, SpawnedObject.position.y, SpawnedObject.position.z));
 
