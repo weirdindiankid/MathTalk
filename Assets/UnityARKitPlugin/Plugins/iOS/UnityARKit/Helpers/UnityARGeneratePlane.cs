@@ -9,24 +9,26 @@ namespace UnityEngine.XR.iOS
 		public GameObject planePrefab;
         public GameObject potentialPlanePrefab;
         private GameObject PotentialPlane;
-        private bool FirstPotentialPlaneFound;
 
         public Button ConfirmationButton;
         public Button DenyButton;
         public Text SearchingMessage;
 
         private UnityARAnchorManager unityARAnchorManager;
-        public static bool AnchorDetected;
-        public static bool PlaneChosen;
+        public static bool NewAnchorDetected;
+        public static bool NewestPotentialPlaneChosen;
+        public static bool FirstPlaneChosen;
+        public static bool FirstPotentialPlaneFound;
 
 		// Use this for initialization
 		void Start () {
             unityARAnchorManager = new UnityARAnchorManager();
-            //ConfirmationButton.gameObject.SetActive(true);
             UnityARUtility.InitializePlanePrefab(planePrefab);
-            AnchorDetected = false;
-            PlaneChosen = false;
+
+            NewAnchorDetected = false;
+            NewestPotentialPlaneChosen = false;
             FirstPotentialPlaneFound = false;
+            FirstPlaneChosen = false;
 		}
 
         void OnDestroy()
@@ -47,33 +49,33 @@ namespace UnityEngine.XR.iOS
 
         void Update()
         {
-            ConfirmationButton.gameObject.SetActive(AnchorDetected);
-            DenyButton.gameObject.SetActive(AnchorDetected);
-            SearchingMessage.gameObject.SetActive(!AnchorDetected && !PlaneChosen);
+            ConfirmationButton.gameObject.SetActive(NewAnchorDetected);
+            DenyButton.gameObject.SetActive(NewAnchorDetected);
+            SearchingMessage.gameObject.SetActive(!FirstPlaneChosen && !NewAnchorDetected);
 
             //Initialize Potential plane when first currentAnchor is found
-            if (!FirstPotentialPlaneFound && unityARAnchorManager.currentAnchor != null)
+            if (!FirstPotentialPlaneFound && unityARAnchorManager.newestAnchor != null)
             {
                 PotentialPlane = Instantiate(potentialPlanePrefab);
                 FirstPotentialPlaneFound = true;
             }
 
-            PotentialPlane.gameObject.SetActive(unityARAnchorManager.currentAnchor != null && !PlaneChosen && AnchorDetected);
+            PotentialPlane.gameObject.SetActive(unityARAnchorManager.newestAnchor != null && !NewestPotentialPlaneChosen && NewAnchorDetected);
 
             //Update the position and rotation of the potential plane object to always be equal to the position and rotation of the current anchor
-            if (unityARAnchorManager.currentAnchor != null)
+            if (unityARAnchorManager.newestAnchor != null)
             {
-                PotentialPlane.transform.position = UnityARMatrixOps.GetPosition(unityARAnchorManager.currentAnchor.transform);
-                PotentialPlane.transform.rotation = UnityARMatrixOps.GetRotation(unityARAnchorManager.currentAnchor.transform);
+                PotentialPlane.transform.position = UnityARMatrixOps.GetPosition(unityARAnchorManager.newestAnchor.transform);
+                PotentialPlane.transform.rotation = UnityARMatrixOps.GetRotation(unityARAnchorManager.newestAnchor.transform);
             }
         }
 
-        public void ConfirmPlane(){
-            unityARAnchorManager.ConfirmCurrentAnchor();
+        public void ConfirmNewestPotentialPlane(){
+            unityARAnchorManager.ConfirmNewestAnchor();
         }
 
-        public void DenyPlane(){
-            unityARAnchorManager.DeleteCurrentAnchor();
+        public void DenyNewestPotentialPlane(){
+            unityARAnchorManager.DeleteNewestAnchor();
         }
     }
 }

@@ -12,7 +12,8 @@ namespace UnityEngine.XR.iOS
 
 		private LinkedListDictionary<string, ARPlaneAnchorGameObject> planeAnchorMap;
 
-        public ARPlaneAnchor currentAnchor;
+        public ARPlaneAnchor newestAnchor;
+        public ARPlaneAnchor newestConfirmedPlane;
 
         public UnityARAnchorManager ()
 		{
@@ -27,19 +28,27 @@ namespace UnityEngine.XR.iOS
 		public void AddAnchor(ARPlaneAnchor arPlaneAnchor)
 		{
             //show confirmation button
-            if (!UnityARGeneratePlane.AnchorDetected && !UnityARGeneratePlane.PlaneChosen)
-            {
-                currentAnchor = arPlaneAnchor;
-                UnityARGeneratePlane.AnchorDetected = true;
+
+            if(UnityARGeneratePlane.NewestPotentialPlaneChosen || !UnityARGeneratePlane.FirstPotentialPlaneFound){ //the previous potential plane was chosen, so do not delete its anchor
+                newestAnchor = arPlaneAnchor;
+                UnityARGeneratePlane.NewestPotentialPlaneChosen = false;
+                UnityARGeneratePlane.NewAnchorDetected = true;
+            }
+            else{
+                //RemoveAnchor(newestAnchor); //A new potential plane was found before the previous potential plane was confirmed, so delete the previous one's anchor
+                //You can't remove the newest Anchor because it was never added
+                newestAnchor = arPlaneAnchor;
+                UnityARGeneratePlane.NewestPotentialPlaneChosen = false;
+                UnityARGeneratePlane.NewAnchorDetected = true;
             }
 
 		}
 
 
         //confirmation button calls this
-        public void ConfirmCurrentAnchor(){
+        public void ConfirmNewestAnchor(){
 
-            ARPlaneAnchor arPlaneAnchor = currentAnchor; 
+            ARPlaneAnchor arPlaneAnchor = newestAnchor; 
             GameObject go = UnityARUtility.CreatePlaneInScene(arPlaneAnchor);
             go.AddComponent<DontDestroyOnLoad>();  //this is so these GOs persist across scene loads
             ARPlaneAnchorGameObject arpag = new ARPlaneAnchorGameObject();
@@ -47,8 +56,9 @@ namespace UnityEngine.XR.iOS
             arpag.gameObject = go;
             planeAnchorMap.Add(arPlaneAnchor.identifier, arpag);
 
-            UnityARGeneratePlane.AnchorDetected = false;
-            UnityARGeneratePlane.PlaneChosen = true;
+            UnityARGeneratePlane.NewAnchorDetected = false;
+            UnityARGeneratePlane.NewestPotentialPlaneChosen = true;
+            if (!UnityARGeneratePlane.FirstPlaneChosen) UnityARGeneratePlane.FirstPlaneChosen = true;
         }
 
 		public void RemoveAnchor(ARPlaneAnchor arPlaneAnchor)
@@ -60,9 +70,10 @@ namespace UnityEngine.XR.iOS
 			}
 		}
 
-        public void DeleteCurrentAnchor(){
-            RemoveAnchor(currentAnchor);
-            UnityARGeneratePlane.AnchorDetected = false;
+        public void DeleteNewestAnchor(){
+            //RemoveAnchor(newestAnchor);
+            UnityARGeneratePlane.NewAnchorDetected = false;
+            UnityARGeneratePlane.NewestPotentialPlaneChosen = true;
         }
 
 		public void UpdateAnchor(ARPlaneAnchor arPlaneAnchor)
