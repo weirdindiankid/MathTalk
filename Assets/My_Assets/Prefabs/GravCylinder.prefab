@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23715359587382714}
   - component: {fileID: 136833325446967060}
   - component: {fileID: 54681777683743838}
+  - component: {fileID: 114941010045333990}
+  - component: {fileID: 114386926395647852}
   m_Layer: 10
   m_Name: GravCylinder
   m_TagString: Untagged
@@ -100,6 +102,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114386926395647852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508994209360500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IgnoreStartedOverGui: 1
+  IgnoreIsOverGui: 0
+  RequiredFingerCount: 0
+  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
+    type: 2}
+  Camera: {fileID: 0}
+--- !u!114 &114941010045333990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508994209360500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c73c1ab94e28d244827af556dca1ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IgnoreStartedOverGui: 1
+  IgnoreIsOverGui: 0
+  RequiredFingerCount: 2
+  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
+    type: 2}
+  Camera: {fileID: 0}
+  WheelSensitivity: 0
+  Relative: 0
+  ScaleClamp: 0
+  ScaleMin: {x: 0, y: 0, z: 0}
+  ScaleMax: {x: 0, y: 0, z: 0}
 --- !u!136 &136833325446967060
 CapsuleCollider:
   m_ObjectHideFlags: 1
