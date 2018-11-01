@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/Dennis/Desktop/MathTalkDemo
+/Users/Rachel/Desktop/Desktop Folders/Fall 2018/Builds/All_Selectable
 SceneListBegin?
 Assets/My_Assets/Scenes/ScratchARTest.unity
 SceneListEnd?
@@ -350,3 +350,30 @@ c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.UnityARCameraNearFar
+a8970068cd07441f039f583025a1c360 Assembly-CSharp.dll:Lean.Touch.LeanFingerDown
+a9983928dc730652041e898574012ec8 Assembly-CSharp.dll:Lean.Touch.LeanFingerLine
+8be5f4761552f2e8e26f0262b5fe201c Assembly-CSharp.dll:Lean.Touch.LeanFingerSet
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Lean.Touch.LeanTouchEvents
+d91b4e3f0f275b35af63bf5e70bb4f2d Assembly-CSharp.dll:Lean.Touch.LeanSelect
+94dff2f3ee5a566ed431b9652d2b9133 Assembly-CSharp.dll:Lean.Touch.LeanRotateCustomAxis
+3f0d207798ff3f82097b8267e81d9b5d Assembly-CSharp.dll:Lean.Touch.LeanCanvasArrow
+8840c09e5c6f91f51d67a263b92efc4d Assembly-CSharp.dll:Lean.Touch.LeanDestroy
+5f8eea2b8513af03c3509b9c09a8e669 Assembly-CSharp.dll:Lean.Touch.LeanPlane
+52b073a562ecb66e8bb10efb53e176d2 Assembly-CSharp.dll:Lean.Touch.LeanFingerSwipe
+d36eaeeddf69afb68c74882ee151f173 Assembly-CSharp.dll:Lean.Touch.LeanOpenUrl
+cfa382f069c433c5a5458412e9d7baa2 Assembly-CSharp.dll:Lean.Touch.LeanRotate
+5d4dbdd2dbdf8ada959e5e5974d37da3 Assembly-CSharp.dll:Lean.Touch.LeanTouch
+4daa7ab61355a39d276709dfb4b845fa Assembly-CSharp.dll:Lean.Touch.LeanCameraMove
+804684ea68dcd632de1697fa7cbeab95 Assembly-CSharp.dll:Lean.Touch.LeanPath
+6efe65e2a064c8fb3f412e17af3d711c Assembly-CSharp.dll:Lean.Touch.LeanSelectable
+38cde82a7a8114d6e3aca9c89a711cb9 Assembly-CSharp.dll:Lean.Touch.LeanScale
+127e80de362a26c5ca5cc8f4c3a0ac85 Assembly-CSharp.dll:Lean.Touch.LeanSelectableSpriteRendererColor
+624cc8f11771fe21455ebfa5692de489 Assembly-CSharp.dll:Lean.Touch.LeanFingerTap
+ca4e590e883208bb757234a8dc1e6925 Assembly-CSharp.dll:Lean.Touch.LeanCameraZoom
+f7405f8d237b75f3eb952ea8d60e56cf Assembly-CSharp.dll:Lean.Touch.LeanFingerTrail
+127e80de362a26c5ca5cc8f4c3a0ac85 Assembly-CSharp.dll:Lean.Touch.LeanSelectableGraphicColor
+f071d3fa540d2bc75c4ec138372b5f2e Assembly-CSharp.dll:Lean.Touch.LeanTranslate
+5abd449e5a94a9b1cae4d0818f0c3750 Assembly-CSharp.dll:Lean.Touch.LeanFingerUp
+5bcac9c883730818a4644855ecedab9b Assembly-CSharp.dll:Lean.Touch.LeanSpawnAt
+c6091b04d2d0669e812618b1cef9194c Assembly-CSharp.dll:Lean.Touch.LeanFingerHeld
+e7c2d835b96fa0a39b97462fe240f013 Assembly-CSharp.dll:Lean.Touch.LeanSelectableRendererColor
