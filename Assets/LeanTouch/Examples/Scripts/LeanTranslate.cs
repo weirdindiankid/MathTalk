@@ -31,7 +31,8 @@ namespace Lean.Touch
 		{
 			if (RequiredSelectable == null)
 			{
-				RequiredSelectable = GetComponent<LeanSelectable>();
+				//RequiredSelectable = GetComponent<LeanSelectable>();
+                RequiredSelectable = this.gameObject.GetComponent<LeanSelectable>();
 			}
 		}
 
