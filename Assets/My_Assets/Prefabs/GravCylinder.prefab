@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54681777683743838}
   - component: {fileID: 114941010045333990}
   - component: {fileID: 114386926395647852}
+  - component: {fileID: 114921812715313680}
   m_Layer: 10
   m_Name: GravCylinder
   m_TagString: Untagged
@@ -116,9 +117,43 @@ MonoBehaviour:
   IgnoreStartedOverGui: 1
   IgnoreIsOverGui: 0
   RequiredFingerCount: 0
-  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
-    type: 2}
+  RequiredSelectable: {fileID: 114921812715313680}
   Camera: {fileID: 0}
+--- !u!114 &114921812715313680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508994209360500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dcd8dace8b7fe449d796b980cb121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeselectOnUp: 0
+  HideWithFinger: 0
+  IsolateSelectingFingers: 0
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSelectSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSelectUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDeselect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  isSelected: 1
 --- !u!114 &114941010045333990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,8 +168,7 @@ MonoBehaviour:
   IgnoreStartedOverGui: 1
   IgnoreIsOverGui: 0
   RequiredFingerCount: 2
-  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
-    type: 2}
+  RequiredSelectable: {fileID: 114921812715313680}
   Camera: {fileID: 0}
   WheelSensitivity: 0
   Relative: 0

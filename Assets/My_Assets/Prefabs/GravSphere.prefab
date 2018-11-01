@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54261506146658918}
   - component: {fileID: 114775931289276744}
   - component: {fileID: 114667813736464550}
+  - component: {fileID: 114066239293920890}
   m_Layer: 10
   m_Name: GravSphere
   m_TagString: Untagged
@@ -102,6 +103,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114066239293920890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425065082621592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dcd8dace8b7fe449d796b980cb121d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeselectOnUp: 0
+  HideWithFinger: 0
+  IsolateSelectingFingers: 0
+  OnSelect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSelectSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnSelectUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Lean.Touch.LeanSelectable+LeanFingerEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDeselect:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  isSelected: 1
 --- !u!114 &114667813736464550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,8 +152,7 @@ MonoBehaviour:
   IgnoreStartedOverGui: 1
   IgnoreIsOverGui: 0
   RequiredFingerCount: 0
-  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
-    type: 2}
+  RequiredSelectable: {fileID: 114066239293920890}
   Camera: {fileID: 0}
 --- !u!114 &114775931289276744
 MonoBehaviour:
@@ -133,8 +168,7 @@ MonoBehaviour:
   IgnoreStartedOverGui: 1
   IgnoreIsOverGui: 0
   RequiredFingerCount: 2
-  RequiredSelectable: {fileID: 114055137020858988, guid: 1bad5d330235c4fcbb264ca39159d82f,
-    type: 2}
+  RequiredSelectable: {fileID: 114066239293920890}
   Camera: {fileID: 0}
   WheelSensitivity: 0
   Relative: 0
