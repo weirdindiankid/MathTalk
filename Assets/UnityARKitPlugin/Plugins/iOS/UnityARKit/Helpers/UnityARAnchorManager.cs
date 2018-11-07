@@ -12,6 +12,8 @@ namespace UnityEngine.XR.iOS
 
 		private LinkedListDictionary<string, ARPlaneAnchorGameObject> planeAnchorMap;
 
+        public Stack<ARPlaneAnchorGameObject> confirmedPlanesStack = new Stack<ARPlaneAnchorGameObject>();
+
         public ARPlaneAnchor newestAnchor;
         public ARPlaneAnchor newestConfirmedPlane;
 
@@ -55,6 +57,7 @@ namespace UnityEngine.XR.iOS
             arpag.planeAnchor = arPlaneAnchor;
             arpag.gameObject = go;
             planeAnchorMap.Add(arPlaneAnchor.identifier, arpag);
+            confirmedPlanesStack.Push(arpag);
 
             UnityARGeneratePlane.NewAnchorDetected = false;
             UnityARGeneratePlane.NewestPotentialPlaneChosen = true;
@@ -107,6 +110,11 @@ namespace UnityEngine.XR.iOS
 		{
 			return planeAnchorMap.Values;
 		}
+
+        public void DeleteMostRecentPlane(){
+            ARPlaneAnchorGameObject mostRecentPlane = confirmedPlanesStack.Pop();
+            GameObject.Destroy(mostRecentPlane.gameObject);
+        }
 	}
 }
 

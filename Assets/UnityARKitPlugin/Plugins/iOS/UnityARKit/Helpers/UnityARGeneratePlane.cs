@@ -12,7 +12,7 @@ namespace UnityEngine.XR.iOS
 
         public Button ConfirmationButton;
         public Button DenyButton;
-        public Text SearchingMessage;
+        public Image SearchingMessage;
 
         private UnityARAnchorManager unityARAnchorManager;
         public static bool NewAnchorDetected;
@@ -77,6 +77,60 @@ namespace UnityEngine.XR.iOS
         public void DenyNewestPotentialPlane(){
             unityARAnchorManager.DeleteNewestAnchor();
         }
+
+        public void ClearAllPlaneAnchors(){
+            unityARAnchorManager.Destroy();
+            unityARAnchorManager = new UnityARAnchorManager();
+            NewAnchorDetected = false;
+            NewestPotentialPlaneChosen = false;
+            FirstPotentialPlaneFound = false;
+            FirstPlaneChosen = false;
+        }
+
+        public void DeleteMostRecentPlane()
+        {
+            if (unityARAnchorManager.confirmedPlanesStack.Count > 0)
+            {
+                if (NewAnchorDetected)
+                { //the most recent plane is being deleted while a new one is being detected
+                    if (unityARAnchorManager.confirmedPlanesStack.Count == 1) //this is the last plane left
+                    {
+                        NewAnchorDetected = true;
+                        NewestPotentialPlaneChosen = false;
+                        FirstPotentialPlaneFound = true;
+                        FirstPlaneChosen = false;
+                    }
+                    else
+                    {
+                        NewAnchorDetected = true;
+                        NewestPotentialPlaneChosen = false;
+                        FirstPotentialPlaneFound = true;
+                        FirstPlaneChosen = true;
+                    }
+                }
+                else
+                {
+                    if (unityARAnchorManager.confirmedPlanesStack.Count == 1)
+                    {
+                        NewAnchorDetected = false;
+                        NewestPotentialPlaneChosen = false;
+                        FirstPotentialPlaneFound = false;
+                        FirstPlaneChosen = false;
+                    }
+                    else
+                    {
+                        NewAnchorDetected = false;
+                        NewestPotentialPlaneChosen = true;
+                        FirstPotentialPlaneFound = true;
+                        FirstPlaneChosen = true;
+                    }
+
+                }
+
+                unityARAnchorManager.DeleteMostRecentPlane();
+            }
+        }
+
     }
 }
 

@@ -95,6 +95,7 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
     <Compile Include="Assets\My_Assets\Scripts\CreateObj.cs" />
     <Compile Include="Assets\My_Assets\Scripts\OnClickHighlight.cs" />
+    <Compile Include="Assets\My_Assets\Scripts\ShapeObjectDestroyer.cs" />
     <Compile Include="Assets\My_Assets\Scripts\SpawnBalls.cs" />
     <Compile Include="Assets\My_Assets\Scripts\SpawnObject.cs" />
     <Compile Include="Assets\My_Assets\Scripts\SpawnRadioButtons.cs" />

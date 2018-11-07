@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114615101658770118}
   - component: {fileID: 114218954579488742}
   - component: {fileID: 114773747908290746}
+  - component: {fileID: 114707186726657656}
   m_Layer: 10
   m_Name: GravCube
   m_TagString: Untagged
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859822176127166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2baa936f016a9a14e86ac8ea42211f4a, type: 3}
   m_Name: 
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859822176127166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eda371e5375f454490a86f21559ee38, type: 3}
   m_Name: 
@@ -147,13 +148,28 @@ MonoBehaviour:
   RequiredFingerCount: 0
   RequiredSelectable: {fileID: 114773747908290746}
   Camera: {fileID: 0}
---- !u!114 &114773747908290746
+--- !u!114 &114707186726657656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859822176127166}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348aba3e9201345ea9163f7ece43dbdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistanceBelowPlane: 0.15
+  DestroyEffect: {fileID: 1878034607258336, guid: 03175b387fe794b2e9b2d76884cfef32,
+    type: 2}
+  ARPlaneLayer: 10
+--- !u!114 &114773747908290746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859822176127166}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dcd8dace8b7fe449d796b980cb121d, type: 3}
   m_Name: 
@@ -188,7 +204,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859822176127166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c73c1ab94e28d244827af556dca1ed2, type: 3}
   m_Name: 
