@@ -297,7 +297,7 @@ f7405f8d237b75f3eb952ea8d60e56cf Assembly-CSharp.dll:Lean.Touch.LeanFingerTrail
 f071d3fa540d2bc75c4ec138372b5f2e Assembly-CSharp.dll:Lean.Touch.LeanTranslate
 88c949e772057acc221796494b176f33 Assembly-CSharp.dll:.ColorSlider
 63122cae756b75df9d98aca3b18aaf5f Assembly-CSharp.dll:.ColorPresets
-fccdc5641a97b44747fb72f3a1b59774 Assembly-CSharp.dll:.ShapeObjectDestroyer
+b96958fe36db72b55bbe1240b0f1aef9 Assembly-CSharp.dll:.ShapeObjectDestroyer
 7c91c13e6de38fcee13a1d9162935c4c Assembly-CSharp.dll:UnityEngine.XR.iOS.ARKitFaceTrackingRemoteConnection
 5abd449e5a94a9b1cae4d0818f0c3750 Assembly-CSharp.dll:Lean.Touch.LeanFingerUp
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro

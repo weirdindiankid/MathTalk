@@ -159,10 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348aba3e9201345ea9163f7ece43dbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planeAttachedTo: {fileID: 0}
   maxDistanceBelowPlane: 0.15
   DestroyEffect: {fileID: 1878034607258336, guid: 03175b387fe794b2e9b2d76884cfef32,
     type: 2}
   ARPlaneLayer: 10
+  availableForNewAttachedPlane: 0
 --- !u!114 &114773747908290746
 MonoBehaviour:
   m_ObjectHideFlags: 1

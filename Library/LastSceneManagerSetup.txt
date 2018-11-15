@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/LeanTouch/Examples/DoubleTapToSpawn.unity
+- path: Assets/My_Assets/Scenes/ScratchARTest.unity
   isLoaded: 1
   isActive: 1
