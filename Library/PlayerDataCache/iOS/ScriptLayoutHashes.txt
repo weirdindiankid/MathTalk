@@ -228,6 +228,7 @@ fe43c78381311242b7d41580cc74902b Assembly-CSharp.dll:.Ballz
 4903c00541cb6535f2679ebfd987a0ff Assembly-CSharp.dll:.SVBoxSlider
 1de35905a7d61ea0bc44b3809c592d4f Assembly-CSharp.dll:.UnityARFaceAnchorManager
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
+03adb7294f9e553d4218dc36d8bb5599 Assembly-CSharp.dll:.CSharpscaling
 27fbf2e5000f36331cace6b28bd9f515 Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARVideo
 1d5111ae1c7d697ad9906afe6817959f Assembly-CSharp.dll:UnityEngine.XR.iOS.EditorHitTest
 d26fef3d70cce76c9ca25227a4d0555a Assembly-CSharp.dll:.UnityARUserAnchorExample
@@ -297,7 +298,7 @@ f7405f8d237b75f3eb952ea8d60e56cf Assembly-CSharp.dll:Lean.Touch.LeanFingerTrail
 f071d3fa540d2bc75c4ec138372b5f2e Assembly-CSharp.dll:Lean.Touch.LeanTranslate
 88c949e772057acc221796494b176f33 Assembly-CSharp.dll:.ColorSlider
 63122cae756b75df9d98aca3b18aaf5f Assembly-CSharp.dll:.ColorPresets
-b96958fe36db72b55bbe1240b0f1aef9 Assembly-CSharp.dll:.ShapeObjectDestroyer
+8a2302ff2a78811e40f7a3c6fd67083c Assembly-CSharp.dll:.ShapeObjectDestroyer
 7c91c13e6de38fcee13a1d9162935c4c Assembly-CSharp.dll:UnityEngine.XR.iOS.ARKitFaceTrackingRemoteConnection
 5abd449e5a94a9b1cae4d0818f0c3750 Assembly-CSharp.dll:Lean.Touch.LeanFingerUp
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
@@ -337,11 +338,13 @@ aa5e3523afd7fd907d3f99da4b777fdc Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.onClickForScaling
 c6091b04d2d0669e812618b1cef9194c Assembly-CSharp.dll:Lean.Touch.LeanFingerHeld
 fa20481299461e1b327b099ee2b59ed4 Assembly-CSharp.dll:.CreateObj
 e7c2d835b96fa0a39b97462fe240f013 Assembly-CSharp.dll:Lean.Touch.LeanSelectableRendererColor
 3f42425699bc6a69ac5d412efe1d01a5 Assembly-CSharp.dll:.ARReferenceImage
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.UnityARKitLightManager
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.DragObject1
 91064ee3a8aae2f5e452f1aeb0afc602 Assembly-CSharp.dll:.ARKitPlaneMeshRender
 be05cccf9a5a5ef0737550885f55e634 Assembly-CSharp.dll:.UnityPointCloudExample
 182e416670915c50a548c38c642db0d8 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour

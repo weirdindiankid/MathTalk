@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 114667813736464550}
   - component: {fileID: 114066239293920890}
   - component: {fileID: 114255653784746250}
+  - component: {fileID: 114792704636707386}
+  - component: {fileID: 114293868518364850}
   m_Layer: 10
   m_Name: GravSphere
   m_TagString: Untagged
@@ -155,7 +157,17 @@ MonoBehaviour:
   DestroyEffect: {fileID: 1878034607258336, guid: 03175b387fe794b2e9b2d76884cfef32,
     type: 2}
   ARPlaneLayer: 10
-  availableForNewAttachedPlane: 0
+--- !u!114 &114293868518364850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425065082621592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bce26bfbf36245da9d1ccea1236c2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114667813736464550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +205,17 @@ MonoBehaviour:
   ScaleClamp: 0
   ScaleMin: {x: 0, y: 0, z: 0}
   ScaleMax: {x: 0, y: 0, z: 0}
+--- !u!114 &114792704636707386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425065082621592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f737d0fd74044cc581e3052a4c3ca66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135274212385295254
 SphereCollider:
   m_ObjectHideFlags: 1

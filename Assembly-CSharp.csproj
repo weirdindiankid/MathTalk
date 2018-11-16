@@ -94,6 +94,9 @@
     <Compile Include="Assets\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\LeanTouch\Scripts\LeanTouch.cs" />
     <Compile Include="Assets\My_Assets\Scripts\CreateObj.cs" />
+    <Compile Include="Assets\My_Assets\Scripts\CSharpscaling.cs" />
+    <Compile Include="Assets\My_Assets\Scripts\DragObject1.cs" />
+    <Compile Include="Assets\My_Assets\Scripts\onClickForScaling.cs" />
     <Compile Include="Assets\My_Assets\Scripts\OnClickHighlight.cs" />
     <Compile Include="Assets\My_Assets\Scripts\ShapeObjectDestroyer.cs" />
     <Compile Include="Assets\My_Assets\Scripts\SpawnBalls.cs" />
