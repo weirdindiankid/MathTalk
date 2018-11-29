@@ -19,6 +19,8 @@ public class SpawnRadioButtons : MonoBehaviour
     public GameObject CubeObj;
     public GameObject SphereObj;
     public GameObject CanObj;
+    public Vector3 StartPos;
+    public Vector3 EndPos;
     //public string[] RadioStrings = new string[] { "Cubes", "Spheres", "Cones" };
 
     public float maxRayDistance = 1000.0f;
@@ -107,41 +109,55 @@ public class SpawnRadioButtons : MonoBehaviour
     }
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount == 1)
         {
             var touch = Input.GetTouch(0);
-
+            var ScreenWidthPercent = Screen.width - Screen.width / 20;    // 5% 
             if (touch.phase == TouchPhase.Began)
             {
+
+                StartPos = Camera.main.ScreenToViewportPoint(touch.position);
+                Debug.Log("StartStartPos is:" + StartPos);
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                EndPos = Camera.main.ScreenToViewportPoint(touch.position);
                 var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
                 /*
                 ARPoint point = new ARPoint {
                     x = screenPosition.x,
-                    y = screenPosition.y
-                    
+                    y = screenPosition.y    
         }; */
-                Ray ray = Camera.main.ScreenPointToRay(new Vector2(screenPosition.x*Camera.main.pixelWidth, screenPosition.y*Camera.main.pixelHeight));
+                Ray ray = Camera.main.ScreenPointToRay(new Vector2(screenPosition.x * Camera.main.pixelWidth, screenPosition.y * Camera.main.pixelHeight));
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
+                float dist;
+                dist = Vector3.Distance(StartPos, EndPos);
+                Debug.Log("Distance is:" + dist);
+                Debug.Log("StartPos is:" + StartPos);
+                Debug.Log("EndPos is:" + EndPos);
+                if (dist == 0)
                 {
-                    GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
-                    CreatedObjs.Add(obj); // Adds object to list for easy deletion
+                    if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
+                    {
+                        GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
+                        CreatedObjs.Add(obj); // Adds object to list for easy deletion
 
-                    //UNCOMMMENT THIS LINE TO MAKE OBJECTS MAGNETIC
-                    //magnetManager.magnets.Add(obj); //ALL OBJECTS ARE MAGNETIC FOR NOW
-					
-                    // Uncomment these lines for random color changing.
-                    //Renderer rend = obj.GetComponent<Renderer>();
-                    //rend.material.shader = Shader.Find("_Color");
-                    //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+                        //UNCOMMMENT THIS LINE TO MAKE OBJECTS MAGNETIC
+                        //magnetManager.magnets.Add(obj); //ALL OBJECTS ARE MAGNETIC FOR NOW
 
-                    //we're going to get the position from the contact point
-                    obj.transform.position = hit.point;
-                    Debug.Log (string.Format ("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
-					Debug.Log (string.Format ("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
-					Debug.Log (string.Format ("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth/2, Camera.main.pixelHeight/2));
-                    //and the rotation from the transform of the plane collider
-                    obj.transform.rotation = hit.transform.rotation;
+                        // Uncomment these lines for random color changing.
+                        //Renderer rend = obj.GetComponent<Renderer>();
+                        //rend.material.shader = Shader.Find("_Color");
+                        //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+
+                        //we're going to get the position from the contact point
+                        obj.transform.position = hit.point;
+                        Debug.Log(string.Format("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
+                        Debug.Log(string.Format("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
+                        Debug.Log(string.Format("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2));
+                        //and the rotation from the transform of the plane collider
+                        obj.transform.rotation = hit.transform.rotation;
+                    }
                 }
 
                 /* 
