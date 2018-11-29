@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114707186726657656}
   - component: {fileID: 114963140313706900}
   - component: {fileID: 114394153395533266}
+  - component: {fileID: 114405709254144480}
   m_Layer: 10
   m_Name: GravCube
   m_TagString: Untagged
@@ -145,6 +146,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f737d0fd74044cc581e3052a4c3ca66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114405709254144480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859822176127166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d039a8f1280104df38be6fcad12fc628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  isBeingScaled: 0
+  isBeingTranslated: 0
+  normalColor: {r: 0.16135636, g: 0.9245283, b: 0.8868019, a: 0.7058824}
+  selectedColor: {r: 0.9811321, g: 0.18974723, b: 0.18974723, a: 0.72156864}
 --- !u!114 &114615101658770118
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.iOS;
 
 public class ShapeObjectDestroyer : MonoBehaviour {
 
@@ -43,7 +44,7 @@ public class ShapeObjectDestroyer : MonoBehaviour {
 
         //HANDLES OBJECT DELETION WHEN A SINGLE OBJECT FALLS OFF OF THE PLANE, AND THE PLANE ITSELF IS NOT DELETED
         if(planeAttachedToFollower != null){
-            if (gameObject.transform.position.y + maxDistanceBelowPlane < planeAttachedToFollower.transform.position.y)
+            if (gameObject.transform.position.y + maxDistanceBelowPlane < UnityARGeneratePlane.LowestPlaneHeight)
             {
                 //object is too far below the plane so delete it
                 GameObject destroyEffect = Instantiate(DestroyEffect); //spawn the destroy effect at the position of this shape

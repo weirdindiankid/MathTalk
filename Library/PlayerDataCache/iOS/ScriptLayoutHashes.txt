@@ -60,6 +60,7 @@ e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 8be5f4761552f2e8e26f0262b5fe201c Assembly-CSharp.dll:Lean.Touch.LeanFingerSet
+9f6ae76bb1cfe109c09b947f879c72d9 Assembly-CSharp.dll:.SelectTracker
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Lean.Touch.LeanTouchEvents
 0d05f5996af553f7800f35496ff8cafd Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARHitTestExample
 50b0b141074b216c8b53b1bd467f73c9 Unity.TextMeshPro.dll:TMPro.TMP_InputField
@@ -216,7 +217,7 @@ c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 d36eaeeddf69afb68c74882ee151f173 Assembly-CSharp.dll:Lean.Touch.LeanOpenUrl
-b101fe6b1baaec1578b4d3e73936e217 Assembly-CSharp.dll:.SpawnRadioButtons
+95b22e2ae77f857a9b271984eda2a4a5 Assembly-CSharp.dll:.SpawnRadioButtons
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 e4a70cc0cac0f508282cb46eb8e142d7 Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityRemoteVideo
 0a414ff269c3ee6b410dedd2662ec9f5 Assembly-CSharp.dll:.RelocalizationControl
@@ -228,7 +229,7 @@ fe43c78381311242b7d41580cc74902b Assembly-CSharp.dll:.Ballz
 4903c00541cb6535f2679ebfd987a0ff Assembly-CSharp.dll:.SVBoxSlider
 1de35905a7d61ea0bc44b3809c592d4f Assembly-CSharp.dll:.UnityARFaceAnchorManager
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-03adb7294f9e553d4218dc36d8bb5599 Assembly-CSharp.dll:.CSharpscaling
+894a2bae50dd4724201ad8adf7f4bafe Assembly-CSharp.dll:.CSharpscaling
 27fbf2e5000f36331cace6b28bd9f515 Assembly-CSharp.dll:UnityEngine.XR.iOS.UnityARVideo
 1d5111ae1c7d697ad9906afe6817959f Assembly-CSharp.dll:UnityEngine.XR.iOS.EditorHitTest
 d26fef3d70cce76c9ca25227a4d0555a Assembly-CSharp.dll:.UnityARUserAnchorExample
@@ -381,3 +382,4 @@ c8a41ce4eea7677f6dd2aa0e422a2f04 Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehav
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.UnityARCameraNearFar
+bae340a5843c0c4a6a6d20161e1c5801 Assembly-CSharp.dll:.MagnetManager

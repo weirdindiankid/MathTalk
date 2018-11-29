@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114255653784746250}
   - component: {fileID: 114792704636707386}
   - component: {fileID: 114293868518364850}
+  - component: {fileID: 114103061300639490}
   m_Layer: 10
   m_Name: GravSphere
   m_TagString: Untagged
@@ -141,6 +142,22 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   isSelected: 1
+--- !u!114 &114103061300639490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425065082621592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d039a8f1280104df38be6fcad12fc628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  isBeingScaled: 0
+  isBeingTranslated: 0
+  normalColor: {r: 0.92532074, g: 0.9528302, b: 0.18427375, a: 0.84705883}
+  selectedColor: {r: 0.9811321, g: 0.24528302, b: 0.24528302, a: 0.8039216}
 --- !u!114 &114255653784746250
 MonoBehaviour:
   m_ObjectHideFlags: 1

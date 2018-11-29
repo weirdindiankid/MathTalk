@@ -19,6 +19,7 @@ namespace UnityEngine.XR.iOS
         public static bool NewestPotentialPlaneChosen;
         public static bool FirstPlaneChosen;
         public static bool FirstPotentialPlaneFound;
+        public static float LowestPlaneHeight;
 
 		// Use this for initialization
 		void Start () {
@@ -68,6 +69,8 @@ namespace UnityEngine.XR.iOS
                 PotentialPlane.transform.position = UnityARMatrixOps.GetPosition(unityARAnchorManager.newestAnchor.transform);
                 PotentialPlane.transform.rotation = UnityARMatrixOps.GetRotation(unityARAnchorManager.newestAnchor.transform);
             }
+
+            LowestPlaneHeight = unityARAnchorManager.GetLowestPlaneHeight();
         }
 
         public void ConfirmNewestPotentialPlane(){

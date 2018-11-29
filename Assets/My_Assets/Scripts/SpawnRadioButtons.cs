@@ -9,6 +9,12 @@ public class SpawnRadioButtons : MonoBehaviour
 
     //public int RadioInt = 3;
 
+    public enum SpawnProperty { Magnet, Rubber, Paper }; //have this be changed by the property slider. When a new object is created, it gets the property that this is currently assigned to
+    //when object is created, have a case statement that gives it different properties depending on this enum value
+
+
+    public MagnetManager magnetManager;
+
     private GameObject SpawnObj;
     public GameObject CubeObj;
     public GameObject SphereObj;
@@ -104,13 +110,15 @@ public class SpawnRadioButtons : MonoBehaviour
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
+
             if (touch.phase == TouchPhase.Began)
             {
                 var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
                 /*
                 ARPoint point = new ARPoint {
                     x = screenPosition.x,
-                    y = screenPosition.y	
+                    y = screenPosition.y
+                    
         }; */
                 Ray ray = Camera.main.ScreenPointToRay(new Vector2(screenPosition.x*Camera.main.pixelWidth, screenPosition.y*Camera.main.pixelHeight));
                 RaycastHit hit;
@@ -118,6 +126,9 @@ public class SpawnRadioButtons : MonoBehaviour
                 {
                     GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
                     CreatedObjs.Add(obj); // Adds object to list for easy deletion
+
+                    //UNCOMMMENT THIS LINE TO MAKE OBJECTS MAGNETIC
+                    //magnetManager.magnets.Add(obj); //ALL OBJECTS ARE MAGNETIC FOR NOW
 					
                     // Uncomment these lines for random color changing.
                     //Renderer rend = obj.GetComponent<Renderer>();

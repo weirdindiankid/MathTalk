@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114849977291611588}
   - component: {fileID: 114428827815745500}
   - component: {fileID: 114840909242534916}
+  - component: {fileID: 114698661371239216}
   m_Layer: 10
   m_Name: GravCylinder
   m_TagString: Untagged
@@ -133,6 +134,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bce26bfbf36245da9d1ccea1236c2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114698661371239216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1508994209360500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d039a8f1280104df38be6fcad12fc628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
+  isBeingScaled: 0
+  isBeingTranslated: 0
+  normalColor: {r: 0.42857727, g: 0.9528302, b: 0.18427375, a: 0.83137256}
+  selectedColor: {r: 0.990566, g: 0.126157, b: 0.126157, a: 0.7764706}
 --- !u!114 &114840909242534916
 MonoBehaviour:
   m_ObjectHideFlags: 1

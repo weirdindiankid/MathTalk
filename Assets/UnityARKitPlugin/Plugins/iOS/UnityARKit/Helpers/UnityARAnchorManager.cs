@@ -115,6 +115,16 @@ namespace UnityEngine.XR.iOS
             ARPlaneAnchorGameObject mostRecentPlane = confirmedPlanesStack.Pop();
             GameObject.Destroy(mostRecentPlane.gameObject);
         }
+
+        public float GetLowestPlaneHeight(){
+            float height = float.MaxValue;
+            foreach(ARPlaneAnchorGameObject plane in confirmedPlanesStack){
+                if (plane.gameObject.transform.position.y < height){
+                    height = plane.gameObject.transform.position.y;
+                }
+            }
+            return height;
+        }
 	}
 }
 
