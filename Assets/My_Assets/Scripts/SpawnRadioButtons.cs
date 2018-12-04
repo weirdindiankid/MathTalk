@@ -12,8 +12,13 @@ public class SpawnRadioButtons : MonoBehaviour
     public enum SpawnProperty { Magnet, Rubber, Paper }; //have this be changed by the property slider. When a new object is created, it gets the property that this is currently assigned to
     //when object is created, have a case statement that gives it different properties depending on this enum value
 
+    static public SpawnProperty CurrentProperty; //controlled by materialSelection script
 
     public MagnetManager magnetManager;
+    public PhysicMaterial magneticMaterial;
+    public PhysicMaterial defaultMaterial;
+    public PhysicMaterial rubberMaterial;
+    public PhysicMaterial paperMaterial;
 
     private GameObject SpawnObj;
     public GameObject CubeObj;
@@ -127,8 +132,22 @@ public class SpawnRadioButtons : MonoBehaviour
                     GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
                     CreatedObjs.Add(obj); // Adds object to list for easy deletion
 
-                    //UNCOMMMENT THIS LINE TO MAKE OBJECTS MAGNETIC
-                    //magnetManager.magnets.Add(obj); //ALL OBJECTS ARE MAGNETIC FOR NOW
+                    switch (CurrentProperty){
+                        case SpawnProperty.Magnet:
+                            magnetManager.magnets.Add(obj);
+                            obj.GetComponent<SelectTracker>().normalColor = new Color(0.5f, 0.5f, 0.5f); //magents automatically have a color of gray 
+                            obj.GetComponent<SelectTracker>().deactivateHighlight(); //start with the highlight deactivated
+                            obj.GetComponent<Collider>().material = magneticMaterial;
+                            break;
+                        case SpawnProperty.Rubber:
+                            obj.GetComponent<Collider>().material = rubberMaterial;
+                            break;
+                        case SpawnProperty.Paper:
+                            obj.GetComponent<Collider>().material = paperMaterial;
+                            obj.GetComponent<Rigidbody>().drag = 13f;
+
+                            break;
+                    }
 					
                     // Uncomment these lines for random color changing.
                     //Renderer rend = obj.GetComponent<Renderer>();

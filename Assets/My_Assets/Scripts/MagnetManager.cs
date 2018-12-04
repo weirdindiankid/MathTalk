@@ -26,9 +26,15 @@ public class MagnetManager : MonoBehaviour {
             if (magnet1 != null){
                 foreach (GameObject magnet2 in magnets){
                     if (magnet2 != null && magnet1.GetInstanceID() != magnet2.GetInstanceID()){ //magnetic force from one magnet only applied to magnets that are not null (destroyed) and are not this magnet itself
-                        magnet1.GetComponent<Rigidbody>().AddForce(new Vector3(magnet2.transform.position.x - magnet1.transform.position.x,
-                                                                               magnet2.transform.position.y - magnet1.transform.position.y, 
-                                                                               magnet2.transform.position.z - magnet1.transform.position.z));
+                        Vector3 magnetForce = new Vector3((magnet2.transform.position.x - magnet1.transform.position.x),
+                                                          (magnet2.transform.position.y - magnet1.transform.position.y), 
+                                                          (magnet2.transform.position.z - magnet1.transform.position.z));
+                        float magnetDistance = Mathf.Abs(Vector3.Distance(magnet2.transform.position, magnet1.transform.position));
+                        float magnetForceStrength = 2f;
+                        Vector3 finalMagneticForce = new Vector3((magnetForceStrength * magnetForce.x / magnetDistance),
+                                                                 (magnetForceStrength * magnetForce.y / magnetDistance),
+                                                                 (magnetForceStrength * magnetForce.z / magnetDistance));
+                        magnet1.GetComponent<Rigidbody>().AddForce(finalMagneticForce);
                     }
                 }
             }

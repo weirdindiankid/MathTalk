@@ -141,6 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magnetManager: {fileID: 347529417}
+  magneticMaterial: {fileID: 13400000, guid: 00b3b645940994715b19cdac46142bee, type: 2}
+  defaultMaterial: {fileID: 13400000, guid: a49cdac558b7842c1977dc13ec41abec, type: 2}
+  rubberMaterial: {fileID: 13400000, guid: 3dd5a113153d1438680a99b222c57fb3, type: 2}
+  paperMaterial: {fileID: 13400000, guid: ecac851af18374b7b9fd54b37860e3cc, type: 2}
   CubeObj: {fileID: 1859822176127166, guid: 5de37038992124f248bd3dbd2b6f681e, type: 2}
   SphereObj: {fileID: 1425065082621592, guid: 5092ee5b3b99f4108aabf3f1dd9764ca, type: 2}
   CanObj: {fileID: 1508994209360500, guid: 70b00e226dcac4a069118d7308a0323c, type: 2}
@@ -2487,6 +2491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5386355325934d39a4a02991f63f4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrderedProperties: 000000000100000002000000
+  MaterialIcon: {fileID: 2048523458}
+  maxTimeBeforeIconFadeOut: 2
 --- !u!114 &1981939305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2586,7 +2593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2048523459
 RectTransform:
   m_ObjectHideFlags: 0
