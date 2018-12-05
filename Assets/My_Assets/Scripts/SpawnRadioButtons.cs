@@ -12,8 +12,13 @@ public class SpawnRadioButtons : MonoBehaviour
     public enum SpawnProperty { Magnet, Rubber, Paper }; //have this be changed by the property slider. When a new object is created, it gets the property that this is currently assigned to
     //when object is created, have a case statement that gives it different properties depending on this enum value
 
+    static public SpawnProperty CurrentProperty; //controlled by materialSelection script
 
     public MagnetManager magnetManager;
+    public PhysicMaterial magneticMaterial;
+    public PhysicMaterial defaultMaterial;
+    public PhysicMaterial rubberMaterial;
+    public PhysicMaterial paperMaterial;
 
     private GameObject SpawnObj;
     public GameObject CubeObj;
@@ -137,27 +142,41 @@ public class SpawnRadioButtons : MonoBehaviour
                 Debug.Log("EndPos is:" + EndPos);
                 if (dist == 0)
                 {
-                    if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
-                    {
-                        GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
-                        CreatedObjs.Add(obj); // Adds object to list for easy deletion
 
-                        //UNCOMMMENT THIS LINE TO MAKE OBJECTS MAGNETIC
-                        //magnetManager.magnets.Add(obj); //ALL OBJECTS ARE MAGNETIC FOR NOW
+                    GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
+                    CreatedObjs.Add(obj); // Adds object to list for easy deletion
 
-                        // Uncomment these lines for random color changing.
-                        //Renderer rend = obj.GetComponent<Renderer>();
-                        //rend.material.shader = Shader.Find("_Color");
-                        //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+                    switch (CurrentProperty){
+                        case SpawnProperty.Magnet:
+                            magnetManager.magnets.Add(obj);
+                            obj.GetComponent<SelectTracker>().normalColor = new Color(0.5f, 0.5f, 0.5f); //magents automatically have a color of gray 
+                            obj.GetComponent<SelectTracker>().deactivateHighlight(); //start with the highlight deactivated
+                            obj.GetComponent<Collider>().material = magneticMaterial;
+                            break;
+                        case SpawnProperty.Rubber:
+                            obj.GetComponent<Collider>().material = rubberMaterial;
+                            break;
+                        case SpawnProperty.Paper:
+                            obj.GetComponent<Collider>().material = paperMaterial;
+                            obj.GetComponent<Rigidbody>().drag = 13f;
 
-                        //we're going to get the position from the contact point
-                        obj.transform.position = hit.point;
-                        Debug.Log(string.Format("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
-                        Debug.Log(string.Format("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
-                        Debug.Log(string.Format("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2));
-                        //and the rotation from the transform of the plane collider
-                        obj.transform.rotation = hit.transform.rotation;
+                            break;
                     }
+					
+                    // Uncomment these lines for random color changing.
+                    //Renderer rend = obj.GetComponent<Renderer>();
+                    //rend.material.shader = Shader.Find("_Color");
+                    //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+
+                    //we're going to get the position from the contact point
+                    obj.transform.position = hit.point;
+                    Debug.Log (string.Format ("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
+					Debug.Log (string.Format ("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
+					Debug.Log (string.Format ("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth/2, Camera.main.pixelHeight/2));
+                    //and the rotation from the transform of the plane collider
+                    obj.transform.rotation = hit.transform.rotation;
+
+                    
                 }
 
                 /* 
