@@ -11,11 +11,11 @@ Open the Xcode file from the build folder that was created to run and test the a
 		* An instance of the UnityARAnchorManager is required to detect potential planes. UnityARGeneratePlane interacts
 		* with its unique instance of UnityARAnchorManager to give the user control of which planes they create
 		
-* Can create multiple planes as play areas at once, delete plane feature deletes most recently created plane (and all objects currently associated with it) and can move objects back and forth between planes:
+* Can create (1) multiple planes as play areas at once, (2) delete plane feature deletes most recently created plane (and all objects currently associated with it) and (3) can move objects back and forth between planes:
 	* UnityARAnchorManager was updated from the most recent iteration of the project to allow for users to use multiple
 	planes, and deletion and creation is managed with a stack
 	
-* Ability to move and scale objects, object that is being selected will be highlighted:
+* Ability to (1) move and scale objects and (2) object that is being selected will be highlighted:
 	* (Scripts attached to object PreFabs with Game Object created for CSharpscaling)
 	onClickForScaling.cs
 	* CSharpscaling.cs
