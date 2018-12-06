@@ -6,31 +6,31 @@ This is an IOS app built on Apple's ARKit SDK in Unity. Goal is to create an AR 
  From project in Unity, select File --> Build Settings --> Build. Ensure "My_Asset/Scenes/ScratchARTest" is selected
 Open the Xcode file from the build folder that was created to run and test the app on your own, connected, iOS device. 
  ## Features as of December 2018 ##
- *Ability to accept or reject plane once it is detected:
-	*UnityARGeneratePlane.cs
-		*An instance of the UnityARAnchorManager is required to detect potential planes. UnityARGeneratePlane interacts
-		*with its unique instance of UnityARAnchorManager to give the user control of which planes they create
+ * Ability to accept or reject plane once it is detected:
+	* UnityARGeneratePlane.cs
+		* An instance of the UnityARAnchorManager is required to detect potential planes. UnityARGeneratePlane interacts
+		* with its unique instance of UnityARAnchorManager to give the user control of which planes they create
 		
-*Can create multiple planes as play areas at once, delete plane feature deletes most recently created plane (and all objects currently associated with it) and can move objects back and forth between planes:
-	*UnityARAnchorManager was updated from the most recent iteration of the project to allow for users to use multiple
+* Can create multiple planes as play areas at once, delete plane feature deletes most recently created plane (and all objects currently associated with it) and can move objects back and forth between planes:
+	* UnityARAnchorManager was updated from the most recent iteration of the project to allow for users to use multiple
 	planes, and deletion and creation is managed with a stack
 	
 * Ability to move and scale objects, object that is being selected will be highlighted:
-	*(Scripts attached to object PreFabs with Game Object created for CSharpscaling)
+	* (Scripts attached to object PreFabs with Game Object created for CSharpscaling)
 	onClickForScaling.cs
-	*CSharpscaling.cs
-	*DragObject1.cs
+	* CSharpscaling.cs
+	* DragObject1.cs
 	
-*Object Deletion:
-	*ShapeObjectDestroyer.cs (deleted by dropping object outside of plane)
+* Object Deletion:
+	* ShapeObjectDestroyer.cs (deleted by dropping object outside of plane)
 	
-*Change materials of objects before creating them: a choice of magnetic, rubber, or paper
-	*MaterialSelector.cs (attached to the UI slider): 
-		*Slider's current value in a certain range determines the material of the next object
+* Change materials of objects before creating them: a choice of magnetic, rubber, or paper
+	* MaterialSelector.cs (attached to the UI slider): 
+		* Slider's current value in a certain range determines the material of the next object
 		to be placed. Currently 0-.33 is magnetic, .34 - .66 is rubber and .67 - 1 is rubber. That can be easily
 		changed within the unity interface, not requiring any code changes. 
-	*SpawnRadioButtons.cs 
-		*The create object is given the material corresponding to the value 
+	* SpawnRadioButtons.cs 
+		* The created object is given the material corresponding to the value 
 		
 		
 This README will be expanded upon as features grow.
