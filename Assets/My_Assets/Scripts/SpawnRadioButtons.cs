@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
@@ -31,17 +31,17 @@ public class SpawnRadioButtons : MonoBehaviour
     public float maxRayDistance = 1000.0f;
     public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
-	private Color[] ObjColors = new Color[3];
+    private Color[] ObjColors = new Color[3];
     private List<GameObject> CreatedObjs = new List<GameObject>();
 
-	void Start () 
-	{
-		// Will clean this up to make it more modular
-		ObjColors[0] = new Color(0.8431373F,0.2F,0.1215686F); // Red
-		ObjColors[1] = new Color(0.2627451F,0.7058824F,1F); // Blue
-		ObjColors[2] = new Color(0.9647059F,0.7843137F,0.3098039F); // Yellow
+    void Start()
+    {
+        // Will clean this up to make it more modular
+        ObjColors[0] = new Color(0.8431373F, 0.2F, 0.1215686F); // Red
+        ObjColors[1] = new Color(0.2627451F, 0.7058824F, 1F); // Blue
+        ObjColors[2] = new Color(0.9647059F, 0.7843137F, 0.3098039F); // Yellow
 
-	}
+    }
 
 
     bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes, GameObject obj)
@@ -62,32 +62,32 @@ public class SpawnRadioButtons : MonoBehaviour
     }
 
 
-/*  Obselete
-    void OnGUI()
-    {
-        //RadioInt = GUI.SelectionGrid(new Rect(25, 25, 1000, 300), RadioInt, RadioStrings, 1);
-        // Creates a set of static radio buttons.
+    /*  Obselete
+        void OnGUI()
+        {
+            //RadioInt = GUI.SelectionGrid(new Rect(25, 25, 1000, 300), RadioInt, RadioStrings, 1);
+            // Creates a set of static radio buttons.
 
-        if (RadioInt == 0)
-        {
-            SpawnObj = CubeObj;
+            if (RadioInt == 0)
+            {
+                SpawnObj = CubeObj;
+            }
+            if (RadioInt == 1)
+            {
+                SpawnObj = SphereObj;
+            }
+            if (RadioInt == 2)
+            {
+                SpawnObj = CanObj;
+            }
+            if (RadioInt == 3) // Just in case
+            {
+                SpawnObj = null;
+            }
         }
-        if (RadioInt == 1)
-        {
-            SpawnObj = SphereObj;
-        }
-        if (RadioInt == 2)
-        {
-            SpawnObj = CanObj;
-        }
-        if (RadioInt == 3) // Just in case
-        {
-            SpawnObj = null;
-        }
-    }
-*/
+    */
 
-    public void Cube() 
+    public void Cube()
     {
         SpawnObj = CubeObj;
     }
@@ -104,9 +104,9 @@ public class SpawnRadioButtons : MonoBehaviour
 
     public void Delete() // Function is called by a button.
     {
-        if (CreatedObjs.Count > 0) 
+        if (CreatedObjs.Count > 0)
         {
-            foreach(GameObject del in CreatedObjs) 
+            foreach (GameObject del in CreatedObjs)
             {
                 Destroy(del);
             }
@@ -142,81 +142,82 @@ public class SpawnRadioButtons : MonoBehaviour
                 Debug.Log("EndPos is:" + EndPos);
                 if (dist == 0)
                 {
+                    if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
+                    {
+                        GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
+                        CreatedObjs.Add(obj); // Adds object to list for easy deletion
 
-                    GameObject obj = Instantiate(SpawnObj, hit.point, hit.transform.rotation);
-                    CreatedObjs.Add(obj); // Adds object to list for easy deletion
+                        switch (CurrentProperty)
+                        {
+                            case SpawnProperty.Magnet:
+                                magnetManager.magnets.Add(obj);
+                                obj.GetComponent<SelectTracker>().normalColor = new Color(0.5f, 0.5f, 0.5f); //magents automatically have a color of gray 
+                                obj.GetComponent<SelectTracker>().deactivateHighlight(); //start with the highlight deactivated
+                                obj.GetComponent<Collider>().material = magneticMaterial;
+                                break;
+                            case SpawnProperty.Rubber:
+                                obj.GetComponent<Collider>().material = rubberMaterial;
+                                break;
+                            case SpawnProperty.Paper:
+                                obj.GetComponent<Collider>().material = paperMaterial;
+                                obj.GetComponent<Rigidbody>().drag = 13f;
 
-                    switch (CurrentProperty){
-                        case SpawnProperty.Magnet:
-                            magnetManager.magnets.Add(obj);
-                            obj.GetComponent<SelectTracker>().normalColor = new Color(0.5f, 0.5f, 0.5f); //magents automatically have a color of gray 
-                            obj.GetComponent<SelectTracker>().deactivateHighlight(); //start with the highlight deactivated
-                            obj.GetComponent<Collider>().material = magneticMaterial;
-                            break;
-                        case SpawnProperty.Rubber:
-                            obj.GetComponent<Collider>().material = rubberMaterial;
-                            break;
-                        case SpawnProperty.Paper:
-                            obj.GetComponent<Collider>().material = paperMaterial;
-                            obj.GetComponent<Rigidbody>().drag = 13f;
+                                break;
+                        }
 
-                            break;
+                        // Uncomment these lines for random color changing.
+                        //Renderer rend = obj.GetComponent<Renderer>();
+                        //rend.material.shader = Shader.Find("_Color");
+                        //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
+
+                        //we're going to get the position from the contact point
+                        obj.transform.position = hit.point;
+                        Debug.Log(string.Format("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
+                        Debug.Log(string.Format("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
+                        Debug.Log(string.Format("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2));
+                        //and the rotation from the transform of the plane collider
+                        obj.transform.rotation = hit.transform.rotation;
                     }
-					
-                    // Uncomment these lines for random color changing.
-                    //Renderer rend = obj.GetComponent<Renderer>();
-                    //rend.material.shader = Shader.Find("_Color");
-                    //rend.material.SetColor("_Color", ObjColors[Random.Range(0,ObjColors.Length)]);
 
-                    //we're going to get the position from the contact point
-                    obj.transform.position = hit.point;
-                    Debug.Log (string.Format ("Normal spawn: x:{0:0.######} y:{1:0.######} z:{2:0.######}", obj.transform.position.x, obj.transform.position.y, obj.transform.position.z));
-					Debug.Log (string.Format ("Screen Spawn area: x:{0:0.######} y:{1:0.######}", screenPosition.x, screenPosition.y));
-					Debug.Log (string.Format ("Middle of Screen: x:{0:0.######} y:{1:0.######}", Camera.main.pixelWidth/2, Camera.main.pixelHeight/2));
-                    //and the rotation from the transform of the plane collider
-                    obj.transform.rotation = hit.transform.rotation;
+                    /* 
+                    GameObject obj = Instantiate(CubeObj, new Vector3(0F, 0F, 0F), CubeObj.transform.rotation);
+                    var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2(0.5F, 0.5F)); // this Vector2 points at the center of the camera
+                            ARPoint point = new ARPoint {
+                                x = screenPosition.x,
+                                y = screenPosition.y
+                            };
 
-                    
+                            // prioritize reults types
+                            ARHitTestResultType[] resultTypes = {
+                                //ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingGeometry,
+                                ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
+                                // if you want to use infinite planes use this:
+                                //ARHitTestResultType.ARHitTestResultTypeExistingPlane,
+                                //ARHitTestResultType.ARHitTestResultTypeEstimatedHorizontalPlane, 
+                                //ARHitTestResultType.ARHitTestResultTypeEstimatedVerticalPlane, 
+                                //ARHitTestResultType.ARHitTestResultTypeFeaturePoint
+                            }; 
+
+                            foreach (ARHitTestResultType resultType in resultTypes)
+                            {
+                                if (HitTestWithResultType (point, resultType, obj))
+                                {
+                                    return;
+                                }
+                            }
+                            */
+
+
+
+
+
+
                 }
 
-                /* 
-                GameObject obj = Instantiate(CubeObj, new Vector3(0F, 0F, 0F), CubeObj.transform.rotation);
-                var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2(0.5F, 0.5F)); // this Vector2 points at the center of the camera
-                        ARPoint point = new ARPoint {
-                            x = screenPosition.x,
-                            y = screenPosition.y
-                        };
-
-                        // prioritize reults types
-                        ARHitTestResultType[] resultTypes = {
-                            //ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingGeometry,
-                            ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
-                            // if you want to use infinite planes use this:
-                            //ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-                            //ARHitTestResultType.ARHitTestResultTypeEstimatedHorizontalPlane, 
-                            //ARHitTestResultType.ARHitTestResultTypeEstimatedVerticalPlane, 
-                            //ARHitTestResultType.ARHitTestResultTypeFeaturePoint
-                        }; 
-
-                        foreach (ARHitTestResultType resultType in resultTypes)
-                        {
-                            if (HitTestWithResultType (point, resultType, obj))
-                            {
-                                return;
-                            }
-                        }
-                        */
-
-
-
-
-
-
             }
-
         }
+
+        // Update is called once per frame
+
     }
-
-    // Update is called once per frame
-
 }
