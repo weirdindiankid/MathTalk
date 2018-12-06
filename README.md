@@ -15,16 +15,16 @@ Open the Xcode file from the build folder that was created to run and test the a
 	* UnityARAnchorManager was updated from the most recent iteration of the project to allow for users to use multiple
 	planes, and deletion and creation is managed with a stack
 	
-* Ability to (5) move and scale objects and (6) object that is being selected will be highlighted:
+* Ability to (5) move and (6) scale objects and (7) object that is being selected will be highlighted:
 	* (Scripts attached to object PreFabs with Game Object created for CSharpscaling)
 	onClickForScaling.cs
 	* CSharpscaling.cs
 	* DragObject1.cs
 	
-* (7) Object Deletion:
+* (8) Object Deletion:
 	* ShapeObjectDestroyer.cs (deleted by dropping object outside of plane)
 	
-* Change materials of objects before creating them: a choice of (8) magnetic, (9) rubber, or (10) paper
+* Change materials of objects before creating them: a choice of (9) magnetic, (10) rubber, or (11) paper
 	* MaterialSelector.cs (attached to the UI slider): 
 		* Slider's current value in a certain range determines the material of the next object
 		to be placed. Currently 0-.33 is magnetic, .34 - .66 is rubber and .67 - 1 is rubber. That can be easily
