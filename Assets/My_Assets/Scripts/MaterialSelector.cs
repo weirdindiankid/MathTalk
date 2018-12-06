@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class MaterialSelector : MonoBehaviour {
 
     public SpawnRadioButtons.SpawnProperty[] OrderedProperties;
+    public Sprite[] OrderedPropertyIcons; //must be in the same order corresponding to the order of properties specified in OrderedProperties
     // Use this for initialization
+    public GameObject MaterialIconBackground;
     public GameObject MaterialIcon;
     public float maxTimeBeforeIconFadeOut;
 
@@ -25,6 +27,8 @@ public class MaterialSelector : MonoBehaviour {
 
         previousSliderValue = materialSlider.value;
 
+        MaterialIcon.GetComponent<Image>().sprite = OrderedPropertyIcons[0];
+
 	}
 	
 	// Update is called once per frame
@@ -35,6 +39,7 @@ public class MaterialSelector : MonoBehaviour {
             if(minSliderVal<=materialSlider.value && materialSlider.value <=maxSliderVal){ //if the slider's value is currently set in this property's portion/zone
                 if(SpawnRadioButtons.CurrentProperty != OrderedProperties[i]){ //if the current property is not equal to the one the slider is currently placed on
                     SpawnRadioButtons.CurrentProperty = OrderedProperties[i]; //set the current property equal to the one the slider is placed on
+                    MaterialIcon.GetComponent<Image>().sprite = OrderedPropertyIcons[i]; 
                 }
             }
         }
@@ -47,11 +52,11 @@ public class MaterialSelector : MonoBehaviour {
         }
         else{
             timeSinceLastMove = 0f;
-            MaterialIcon.SetActive(true);
+            MaterialIconBackground.SetActive(true);
         }
 
         if(timeSinceLastMove >= maxTimeBeforeIconFadeOut){
-            MaterialIcon.SetActive(false);
+            MaterialIconBackground.SetActive(false);
         }
 
         previousSliderValue = materialSlider.value;

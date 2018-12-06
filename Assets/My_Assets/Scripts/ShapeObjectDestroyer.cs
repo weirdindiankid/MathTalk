@@ -38,6 +38,7 @@ public class ShapeObjectDestroyer : MonoBehaviour {
         {
             GameObject destroyEffect = Instantiate(DestroyEffect); //spawn the destroy effect at the position of this shape
             destroyEffect.transform.position = gameObject.transform.position;
+            destroyEffect.transform.localScale = gameObject.transform.localScale;
             Destroy(gameObject);
             Destroy(planeAttachedToFollower);
         }
@@ -49,6 +50,7 @@ public class ShapeObjectDestroyer : MonoBehaviour {
                 //object is too far below the plane so delete it
                 GameObject destroyEffect = Instantiate(DestroyEffect); //spawn the destroy effect at the position of this shape
                 destroyEffect.transform.position = gameObject.transform.position;
+                destroyEffect.transform.localScale = gameObject.transform.localScale;
                 Destroy(gameObject);
                 Destroy(planeAttachedToFollower);
             }
