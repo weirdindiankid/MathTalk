@@ -9,7 +9,7 @@ public class SpawnRadioButtons : MonoBehaviour
 
     //public int RadioInt = 3;
 
-    public enum SpawnProperty { Magnet, Rubber, Paper }; //have this be changed by the property slider. When a new object is created, it gets the property that this is currently assigned to
+    public enum SpawnProperty { Magnet, Rubber, Paper, Default }; //have this be changed by the property slider. When a new object is created, it gets the property that this is currently assigned to
     //when object is created, have a case statement that gives it different properties depending on this enum value
 
     static public SpawnProperty CurrentProperty; //controlled by materialSelection script
@@ -161,7 +161,9 @@ public class SpawnRadioButtons : MonoBehaviour
                             case SpawnProperty.Paper:
                                 obj.GetComponent<Collider>().material = paperMaterial;
                                 obj.GetComponent<Rigidbody>().drag = 13f;
-
+                                break;
+                            case SpawnProperty.Default:
+                                obj.GetComponent<Collider>().material = defaultMaterial;
                                 break;
                         }
 

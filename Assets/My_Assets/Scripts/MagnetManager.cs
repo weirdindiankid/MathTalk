@@ -30,7 +30,11 @@ public class MagnetManager : MonoBehaviour {
                                                           (magnet2.transform.position.y - magnet1.transform.position.y), 
                                                           (magnet2.transform.position.z - magnet1.transform.position.z));
                         float magnetDistance = Mathf.Abs(Vector3.Distance(magnet2.transform.position, magnet1.transform.position));
-                        float magnetForceStrength = 2f;
+
+                        //Uncomment this line to have a magnet's force correlate with its scale. There are currently some bugs with this feature
+                        //float magnetForceStrength = 1f * (magnet2.transform.localScale.x/0.05f) ;
+
+                        float magnetForceStrength = 1f;
                         Vector3 finalMagneticForce = new Vector3((magnetForceStrength * magnetForce.x / magnetDistance),
                                                                  (magnetForceStrength * magnetForce.y / magnetDistance),
                                                                  (magnetForceStrength * magnetForce.z / magnetDistance));
