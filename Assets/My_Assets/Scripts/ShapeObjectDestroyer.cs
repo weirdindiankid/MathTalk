@@ -6,11 +6,11 @@ using UnityEngine.XR.iOS;
 public class ShapeObjectDestroyer : MonoBehaviour {
 
     public GameObject planeAttachedTo = null;  //the plane object that this object is attached to
-    public float maxDistanceBelowPlane = 0.15f;
-    public GameObject DestroyEffect;
+    public float maxDistanceBelowPlane = 0.15f; //distance object can go below plane once it is deleted
+    public GameObject DestroyEffect; //"poof" effect
     public int ARPlaneLayer = 10; //arbitrarily defined in the editor
 
-    private GameObject planeAttachedToFollower = null; //follows the plane object that this object is attached to
+    private GameObject planeAttachedToFollower = null; //dummy object follows the plane object that this object is attached to
 
     private bool planeAttachedToDeleted;
 
@@ -23,7 +23,7 @@ public class ShapeObjectDestroyer : MonoBehaviour {
 	void Update () {
         
         if(planeAttachedTo == null && planeAttachedToFollower != null){
-            //if the plane's follower object still exists but the actual plane object does not exist, we can deduce that the plane was created then deleted
+            //if the plane's follower object still exists but the actual plane object does not exist, we know that the plane was created then deleted
             planeAttachedToDeleted = true;
         }
 
@@ -57,6 +57,7 @@ public class ShapeObjectDestroyer : MonoBehaviour {
         }
 	}
 
+    //Handles assigning an object's "planeAttachedTo"
     void OnCollisionEnter(Collision col)
     {
         if (!planeAttachedToDeleted && col.gameObject.layer == ARPlaneLayer)

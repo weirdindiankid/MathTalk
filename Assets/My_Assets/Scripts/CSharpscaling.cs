@@ -8,6 +8,8 @@ public class CSharpscaling : MonoBehaviour
     public float initialFingersDistance;
     public Vector3 initialScale;
     public Material initialMaterial;
+
+    //static variable representing the transform of the object currently available for scaling; since it is static, only one object scaled at a time
     public static Transform ScaleTransform;
 
 
@@ -52,7 +54,6 @@ public class CSharpscaling : MonoBehaviour
 
                 float scaleFactor = currentFingersDistance / initialFingersDistance;
 
-                //transform.localScale = initialScale * scaleFactor;
                 ScaleTransform.localScale = initialScale * scaleFactor;
 
                 ScaleTransform.gameObject.GetComponent<SelectTracker>().isBeingScaled = true;

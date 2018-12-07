@@ -30,19 +30,9 @@ namespace UnityEngine.XR.iOS
 		public void AddAnchor(ARPlaneAnchor arPlaneAnchor)
 		{
             //show confirmation button
-
-            if(UnityARGeneratePlane.NewestPotentialPlaneChosen || !UnityARGeneratePlane.FirstPotentialPlaneFound){ //the previous potential plane was chosen, so do not delete its anchor
-                newestAnchor = arPlaneAnchor;
-                UnityARGeneratePlane.NewestPotentialPlaneChosen = false;
-                UnityARGeneratePlane.NewAnchorDetected = true;
-            }
-            else{
-                //RemoveAnchor(newestAnchor); //A new potential plane was found before the previous potential plane was confirmed, so delete the previous one's anchor
-                //You can't remove the newest Anchor because it was never added
-                newestAnchor = arPlaneAnchor;
-                UnityARGeneratePlane.NewestPotentialPlaneChosen = false;
-                UnityARGeneratePlane.NewAnchorDetected = true;
-            }
+            newestAnchor = arPlaneAnchor;
+            UnityARGeneratePlane.NewestPotentialPlaneChosen = false;
+            UnityARGeneratePlane.NewAnchorDetected = true;
 
 		}
 
@@ -74,7 +64,6 @@ namespace UnityEngine.XR.iOS
 		}
 
         public void DeleteNewestAnchor(){
-            //RemoveAnchor(newestAnchor);
             UnityARGeneratePlane.NewAnchorDetected = false;
             UnityARGeneratePlane.NewestPotentialPlaneChosen = true;
         }

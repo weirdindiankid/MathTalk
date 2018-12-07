@@ -8,8 +8,8 @@ public class SelectTracker : MonoBehaviour {
     public bool isBeingScaled;
     public bool isBeingTranslated;
 
-    public Color normalColor;
-    public Color selectedColor;
+    public Color normalColor; //specified in editor; color of this object when it is not being translated or scaled
+    public Color selectedColor; //specified in editor; color of this object when it is being " "
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +25,7 @@ public class SelectTracker : MonoBehaviour {
         isSelected = (isBeingScaled || isBeingTranslated);
 	}
 
+    //important to create new unique material when highlighting/dehighlighting, or else altering one object's material changes all of them
     public void activateHighlight(){
         Material newMaterial = GetComponent<Renderer>().material;
         newMaterial.color = selectedColor;
@@ -39,6 +40,7 @@ public class SelectTracker : MonoBehaviour {
         ContinueRotation();
     }
 
+    //called on an object when it is selected; this was to fix the bug that caused objects to rotate infinitely when knocking into something during translation
 	private void FreezeRotation(){
         GetComponent<Rigidbody>().freezeRotation = true;
 	}
