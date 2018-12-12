@@ -18,22 +18,22 @@ public class OnClickHighlight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach(Touch touch in Input.touches)
-		{
-			Ray ray = Camera.main.ScreenPointToRay(touch.position);
-			if (touch.phase == TouchPhase.Began) 
-			{
-				RaycastHit hit = new RaycastHit();
-				if (Physics.Raycast(ray, out hit, HighlightDistance) == this) 
-				{
-					rend.material.shader = Highlight;
-				}
-			}
-			else if (touch.phase == TouchPhase.Ended)
-			{
-				rend.material.shader = Default;
-			}
+        foreach (Touch touch in Input.touches)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            if (touch.phase == TouchPhase.Began)
+            {
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray, out hit, HighlightDistance) == this)
+                {
+                    rend.material.shader = Highlight;
+                }
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                rend.material.shader = Default;
+            }
 
-		}
+        }
 	}
 }
